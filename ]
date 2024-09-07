@@ -8,14 +8,10 @@ M.base46 = {
 	theme = "onedark",
   theme_toggle = { "onedark", "one_light" },
 
-	hl_override = {
-		Comment = { italic = true },
-		["@comment"] = { italic = true },
-	},
-}
-
-M.term = {
-  sizes = { sp = 0.3, vsp = 0.4 },
+	-- hl_override = {
+	-- 	Comment = { italic = true },
+	-- 	["@comment"] = { italic = true },
+	-- },
 }
 
 return M
