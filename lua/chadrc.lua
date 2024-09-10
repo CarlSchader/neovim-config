@@ -5,7 +5,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "rosepine-dawn",
+	theme = "ashes",
   theme_toggle = { "ashes", "rosepine-dawn" },
 
 	hl_override = {
