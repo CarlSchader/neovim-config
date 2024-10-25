@@ -31,6 +31,7 @@ return {
     },
   },
 
+  -- Copilot stuff
   -- {
   --   "zbirenbaum/copilot.lua",
   --   event = "InsertEnter",
