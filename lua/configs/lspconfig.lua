@@ -6,7 +6,7 @@ local lspconfig = require "lspconfig"
 -- CARL look here for valid servers
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 
-local servers = { "html", "cssls", "rust_analyzer", "pylsp", "ts_ls", "sourcekit", "nixd" }
+local servers = { "html", "cssls", "rust_analyzer", "pyright", "ts_ls", "sourcekit", "nixd" }
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
