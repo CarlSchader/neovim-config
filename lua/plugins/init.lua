@@ -32,6 +32,15 @@ return {
     },
   },
 
+  -- Plenary (needed for gitlinker)
+  {
+    "nvim-lua/plenary.nvim"
+  },
+
+  {
+    "ruifm/gitlinker.nvim",
+  },
+
 
   -- {
   --   "nvim-treesitter/nvim-treesitter",
