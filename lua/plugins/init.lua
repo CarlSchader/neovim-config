@@ -41,24 +41,27 @@ return {
     "ruifm/gitlinker.nvim",
   },
 
-  -- DOESN'T WORK ON NIXOS
-  -- {
-  --   "nvim-treesitter/nvim-treesitter",
-  --   opts = {
-  --     ensure_installed = {
-  --       "vim",
-  --       "lua",
-  --       "vimdoc",
-  --       "html",
-  --       "css",
-  --       "typescript",
-  --       "python",
-  --       "rust",
-  --       "swift",
-  --       "javascript",
-  --     },
-  --   },
-  -- },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      highlight = {
+        enable = true,
+      },
+      -- -- DOESN'T WORK ON NIXOS
+      -- ensure_installed = {
+      --   "vim",
+      --   "lua",
+      --   "vimdoc",
+      --   "html",
+      --   "css",
+      --   "typescript",
+      --   "python",
+      --   "rust",
+      --   "swift",
+      --   "javascript",
+      -- },
+    },
+  },
 
   -- -- Copilot stuff
   -- {
