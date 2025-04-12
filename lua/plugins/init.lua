@@ -27,7 +27,7 @@ return {
         -- for example
         enabled = true,  -- if you want to enable the plugin
         message_template = " <summary> • <date> • <author> • <<sha>>", -- template for the blame message, check the Message template section for more options
-        date_format = "%m-%d-%Y %H:%M:%S", -- template for the date, check Date format section for more options
+        date_format = "%m-%d-%Y", -- template for the date, check Date format section for more options
         virtual_text_column = 1,  -- virtual text start column, check Start virtual text at column section for more options
     },
   },
@@ -94,12 +94,21 @@ return {
     version = false, -- Never set this value to "*"! Never!
     opts = {
       privider = "claude",
+      auto_suggestions_provider = "openai",
       claude = {
         endpoint = "https://api.anthropic.com",
         model = "claude-3-7-sonnet-20250219",
         timeout = 30000, -- Timeout in milliseconds
         temperature = 0,
         max_tokens = 20480,
+      },
+      openai = {
+        endpoint = "https://api.openai.com/v1",
+        model = "gpt-4o",
+        timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
+        temperature = 0,
+        max_completion_tokens = 16384, -- Increase this to include reasoning tokens (for reasoning models)
+        reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
       },
       behaviour = {
         auto_suggestions = true;
