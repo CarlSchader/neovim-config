@@ -44,6 +44,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
+      ensure_installed = {},
       highlight = {
         enable = true,
       },
@@ -65,6 +66,8 @@ return {
   --     })
   --   end,
   -- },
+
+  { import = "nvchad.blink.lazyspec" },
 
   {
     "hrsh7th/nvim-cmp",
