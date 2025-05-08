@@ -24,6 +24,8 @@ M.ui = {
 
   telescope = { style = "borderless" },
 
+  -- This isn't set correctly
+  -- If you run :Nvdash it gives a different menu
   nvdash = {
     load_on_startup = true,
     header = {
