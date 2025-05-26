@@ -96,15 +96,24 @@ return {
     event = "VeryLazy",
     version = false, -- Never set this value to "*"! Never!
     opts = {
+      mode = "agentic",
       privider = "claude",
-      auto_suggestions_provider = "claude",
+      auto_suggestions_provider = "copilot",
+      -- cursor_applying_provider = "claude",
+
+      suggestion = {
+        debounce = 1200,
+        throttle = 600,
+      },
+
       claude = {
         endpoint = "https://api.anthropic.com",
         model = "claude-3-7-sonnet-20250219",
         timeout = 30000, -- Timeout in milliseconds
-        temperature = 0,
+        temperature = 0.05,
         max_tokens = 20480,
       },
+
       openai = {
         endpoint = "https://api.openai.com/v1",
         model = "gpt-4o",
@@ -113,11 +122,26 @@ return {
         max_completion_tokens = 16384, -- Increase this to include reasoning tokens (for reasoning models)
         reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
       },
+
       behaviour = {
         auto_suggestions = true;
-        auto_apply_diff_after_generation = true;
+        auto_apply_diff_after_generation = false;
         jump_result_buffer_on_finish = true;
-      };
+      },
+
+      selector = {
+        provider = "fzf",
+        provider_opts = {},
+      },
+
+      rag_service = {
+        enabled = false, -- Enables the RAG service
+        host_mount = os.getenv("HOME"), -- Host mount path for the rag service
+        provider = "openai", -- The provider to use for RAG service (e.g. openai or ollama)
+        llm_model = "", -- The LLM model to use for RAG service
+        embed_model = "", -- The embedding model to use for RAG service
+        endpoint = "https://api.openai.com/v1", -- The API endpoint for RAG service
+      },
     },
 
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
