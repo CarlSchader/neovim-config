@@ -106,22 +106,29 @@ return {
         throttle = 600,
       },
 
-      claude = {
-        endpoint = "https://api.anthropic.com",
-        model = "claude-3-7-sonnet-20250219",
-        timeout = 30000, -- Timeout in milliseconds
-        temperature = 0.05,
-        max_tokens = 20480,
+      providers = {
+        claude = {
+          endpoint = "https://api.anthropic.com",
+          model = "claude-3-7-sonnet-20250219",
+          extra_request_body = {
+            timeout = 30000, -- Timeout in milliseconds
+            temperature = 0.05,
+            max_tokens = 20480,
+          }
+        },
+
+        openai = {
+          endpoint = "https://api.openai.com/v1",
+          model = "gpt-4o",
+          extra_request_body = {
+            timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
+            temperature = 0,
+            max_completion_tokens = 16384, -- Increase this to include reasoning tokens (for reasoning models)
+            reasoning_effort = "medium",
+          }
+        },
       },
 
-      openai = {
-        endpoint = "https://api.openai.com/v1",
-        model = "gpt-4o",
-        timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
-        temperature = 0,
-        max_completion_tokens = 16384, -- Increase this to include reasoning tokens (for reasoning models)
-        reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
-      },
 
       behaviour = {
         auto_suggestions = true;
