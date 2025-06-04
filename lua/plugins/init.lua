@@ -51,21 +51,21 @@ return {
     },
   },
 
-  -- -- Copilot stuff
-  -- {
-  --   "zbirenbaum/copilot.lua",
-  --   event = "InsertEnter",
-  --   cmd = "Copilot",
-  --   config = function()
-  --     require("copilot").setup({
-  --       suggestion = {
-  --         enabled = true,
-  --         auto_trigger = true,
-  --       },
-  --       panel = { enabled = false },
-  --     })
-  --   end,
-  -- },
+  -- Copilot stuff
+  {
+    "zbirenbaum/copilot.lua",
+    event = "InsertEnter",
+    cmd = "Copilot",
+    config = function()
+      require("copilot").setup({
+        suggestion = {
+          enabled = true,
+          auto_trigger = true,
+        },
+        panel = { enabled = false },
+      })
+    end,
+  },
 
   { import = "nvchad.blink.lazyspec" },
 
