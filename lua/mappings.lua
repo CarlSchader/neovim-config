@@ -8,3 +8,4 @@ map("i", "jk", "<ESC>", { desc = "quick <ESC> in insert mode" })
 map("i", "kj", "<ESC>", { desc = "quick <ESC> in insert mode" })
 
 map("n", "gr", function() vim.lsp.buf.references() end, { desc = "LSP go to references" })
+
