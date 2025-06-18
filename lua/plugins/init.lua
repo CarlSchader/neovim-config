@@ -51,6 +51,16 @@ return {
     },
   },
 
+  -- lean.nvim
+  {
+    "Julian/lean.nvim",
+    ft = "lean",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("lean").setup()
+    end,
+  },
+
   -- Copilot stuff
   {
     "zbirenbaum/copilot.lua",
