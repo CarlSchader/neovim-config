@@ -66,15 +66,15 @@ return {
     "zbirenbaum/copilot.lua",
     event = "InsertEnter",
     cmd = "Copilot",
-    -- config = function()
-      -- require("copilot").setup({
-      --   suggestion = {
-      --     enabled = true,
-      --     auto_trigger = true,
-      --   },
-      --   panel = { enabled = false },
-      -- })
-    -- end,
+    config = function()
+      require("copilot").setup({
+        suggestion = {
+          enabled = true,
+          auto_trigger = true,
+        },
+        panel = { enabled = false },
+      })
+    end,
   },
 
   { import = "nvchad.blink.lazyspec" },
@@ -140,7 +140,7 @@ return {
 
 
       behaviour = {
-        auto_suggestions = true;
+        auto_suggestions = false;
         auto_apply_diff_after_generation = false;
         jump_result_buffer_on_finish = true;
       },
