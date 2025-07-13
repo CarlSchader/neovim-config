@@ -107,7 +107,7 @@ return {
     version = false, -- Never set this value to "*"! Never!
     opts = {
       mode = "agentic",
-      privider = "claude",
+      provider = "claude",
       auto_suggestions_provider = "copilot",
       -- cursor_applying_provider = "claude",
 
