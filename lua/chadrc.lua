@@ -5,8 +5,8 @@
 local M = {}
 
 M.base46 = {
-  theme = "gatekeeper",
-  theme_toggle = { "gatekeeper", "one_light" },
+  theme = "dark_horizon",
+  theme_toggle = { "dark_horizon", "one_light" },
   transparency = false,
 
 	hl_override = {
