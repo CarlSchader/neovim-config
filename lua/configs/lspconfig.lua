@@ -15,7 +15,7 @@ local servers = {
   "ts_ls",
   "sourcekit",
   "nixd",
-  "clangd",
+  "ccls",
 }
 
 local nvlsp = require "nvchad.configs.lspconfig"
