@@ -13,6 +13,12 @@ return {
     end,
   },
 
+  -- {
+  --   "simrat39/rust-tools.nvim",
+  --   config = function()
+  --     require "configs.rust-tools"
+  --   end,
+  -- },
 
   -- Sets up rust analyzer
   {
