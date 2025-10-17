@@ -13,6 +13,14 @@ return {
     end,
   },
 
+
+  -- Sets up rust analyzer
+  {
+    'mrcjkb/rustaceanvim',
+    version = '^6', -- Recommended
+    lazy = false, -- This plugin is already lazy
+  },
+
   -- Git Blame
   {
     "f-person/git-blame.nvim",
