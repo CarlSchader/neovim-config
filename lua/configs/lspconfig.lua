@@ -7,7 +7,7 @@ require("nvchad.configs.lspconfig").defaults()
 local servers = {
   "html",
   "cssls",
-  -- "rust_analyzer",
+  "rust_analyzer",
   "pyright",
   "ts_ls",
   "sourcekit",
