@@ -1,4 +1,4 @@
-{ ... }:
+{ self, pkgs, ... }:
 {
   target-path ? "/etc/xdg/nvim",
 }:
@@ -7,7 +7,7 @@
     { ... }:
     {
       environment.etc.nvim = {
-        source = ../.;
+        source = self.${pkgs.system}.packages.default;
         target = target-path;
       };
     };
