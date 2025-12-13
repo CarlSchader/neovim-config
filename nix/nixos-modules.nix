@@ -2,7 +2,7 @@
 {
   nixosModules.default = { ... }:
   {
-    xdg.configfile."nvim".source = ./.;
+    xdg.configFile."nvim".source = ./.;
   };
 }
   
