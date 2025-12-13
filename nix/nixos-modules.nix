@@ -1,8 +1,8 @@
-{ self, ... }:
+{ ... }:
 {
-  nixosModules.default = { pkgs, ... }:
+  nixosModules.default = { ... }:
   {
-    xdg.configfile."nvim".source = self.packages.${pkgs.system}.default;
+    xdg.configfile."nvim".source = ./.;
   };
 }
   
