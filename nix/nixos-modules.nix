@@ -1,14 +1,21 @@
 { self, ... }:
 {
-  target-path ? "/etc/xdg/nvim",
-}:
-{
   nixosModules.default =
-    { pkgs, ... }:
+    { pkgs, lib, config, ... }:
     {
-      environment.etc.nvim = {
-        source = self.${pkgs.system}.packages.default;
-        target = target-path;
+      options.programs.neovim-config = {
+        enable = lib.mkEnableOption "neovim-config";
+        targetPath = lib.mkOption {
+          type = lib.types.str;
+          default = "xdg/nvim";
+          description = "Target path relative to /etc/ for the neovim config";
+        };
+      };
+
+      config = lib.mkIf config.programs.neovim-config.enable {
+        environment.etc.${config.programs.neovim-config.targetPath} = {
+          source = self.packages.${pkgs.system}.default;
+        };
       };
     };
 }
