@@ -1,8 +1,18 @@
 { ... }:
 {
-  nixosModules.default = { ... }:
+  nixosModules.default = { pkgs, ... }:
   {
-    xdg.configFile."nvim".source = ./.;
+    environment.systemPackages = with pkgs; [
+      neovim
+      ripgrep
+      rust-analyzer
+      ty
+      typescript-language-server
+      lua-language-server
+      nixd
+      ccls
+    ];
+    xdg.configFile."nvim".source = ../.;
   };
 }
   

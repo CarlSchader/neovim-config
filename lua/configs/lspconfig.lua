@@ -10,7 +10,6 @@ local servers = {
   "rust_analyzer",
   "ty",
   "ts_ls",
-  "sourcekit",
   "nixd",
   "ccls",
 }
