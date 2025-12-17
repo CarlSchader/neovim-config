@@ -17,5 +17,23 @@
       source = ./..;
     };
   };
+
+  nixosModules.home-manager = { pkgs, ... }:
+  {
+    home.packages = with pkgs; [
+      neovim
+      ripgrep
+      rust-analyzer
+      ty
+      typescript-language-server
+      lua-language-server
+      nixd
+      ccls
+    ];
+
+    xdg.configFile."nvim" = {
+      source = ./..;
+      recursive = true;
+    };
+  };
 }
-  
