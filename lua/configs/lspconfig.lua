@@ -8,7 +8,7 @@ local servers = {
   "html",
   "cssls",
   "rust_analyzer",
-  "pyright",
+  "ty",
   "ts_ls",
   "sourcekit",
   "nixd",
