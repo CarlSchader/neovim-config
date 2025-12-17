@@ -12,7 +12,10 @@
       nixd
       ccls
     ];
-    xdg.configFile."nvim".source = ../.;
+
+    environment.etc."xdg/nvim" = {
+      source = ./..;
+    };
   };
 }
   
