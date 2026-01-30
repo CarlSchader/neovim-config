@@ -15,6 +15,8 @@ local lazy_config = require "configs.lazy"
 
 -- load plugins
 require("lazy").setup({
+  lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json",
+
   {
     "NvChad/NvChad",
     lazy = false,

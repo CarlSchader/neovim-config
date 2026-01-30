@@ -18,7 +18,7 @@
     };
   };
 
-  nixosModules.home-manager = { pkgs, ... }:
+  nixosModules.home-manager = { pkgs, lib, ... }:
   {
     home.packages = with pkgs; [
       neovim
@@ -36,7 +36,10 @@
     };
 
     xdg.configFile."nvim" = {
-      source = ./..;
+      source = lib.cleanSourceWith {
+        src = ./..;
+        filer = path: type: !(lib.hasPrefix "lazy-lock.json" path);
+      };
       recursive = true;
     };
   };
