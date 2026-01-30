@@ -38,7 +38,7 @@
     xdg.configFile."nvim" = {
       source = lib.cleanSourceWith {
         src = ./..;
-        filer = path: type: !(lib.hasPrefix "lazy-lock.json" path);
+        filter = path: type: !(lib.hasPrefix "lazy-lock.json" path);
       };
       recursive = true;
     };
