@@ -13,20 +13,14 @@ return {
     end,
   },
 
-  -- {
-  --   "simrat39/rust-tools.nvim",
-  --   config = function()
-  --     require "configs.rust-tools"
-  --   end,
-  -- },
-
-  -- -- Sets up rust analyzer
-  -- {
-  --   'mrcjkb/rustaceanvim',
-  --   version = '^6', -- Recommended
-  --   lazy = false, -- This plugin is already lazy
-  -- },
-
+  {
+    "kylechui/nvim-surround",
+    version = "^3.0.0",
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup({})
+    end,
+  },
   -- Git Blame
   {
     "f-person/git-blame.nvim",
