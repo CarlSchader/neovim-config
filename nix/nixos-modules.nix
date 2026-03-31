@@ -18,7 +18,7 @@
     };
   };
 
-  nixosModules.home-manager = { pkgs, lib, ... }:
+  homeModules.default = { pkgs, lib, ... }:
   {
     home.packages = with pkgs; [
       neovim
