@@ -4,6 +4,10 @@
   {
     environment.systemPackages = with pkgs; [
       neovim
+      tree-sitter
+      fzf
+      clang
+      tar
       ripgrep
       rust-analyzer
       ty
@@ -22,6 +26,10 @@
   {
     home.packages = with pkgs; [
       neovim
+      tree-sitter
+      fzf
+      clang
+      tar
       ripgrep
       rust-analyzer
       ty
