@@ -1,16 +1,40 @@
 -- Plugins
 return {
-	-- theme plugin
+	-- Theme Plugins
+	
+	-- { 
+	-- 	"catppuccin/nvim", 
+	-- 	name = "catppuccin", 
+	-- 	priority = 1000,
+	-- 	config = function() 
+	-- 		require("catppuccin")
+	-- 		vim.cmd.colorscheme "catppuccin-nvim"
+	-- 	end,
+	-- },
+
+	-- {
+	-- 	"tiagovla/tokyodark.nvim",
+	-- 	opts = {
+	-- 			-- custom options here
+	-- 	},
+	-- 	config = function(_, opts)
+	-- 			require("tokyodark").setup(opts) -- calling setup is optional
+	-- 			vim.cmd [[colorscheme tokyodark]]
+	-- 	end,
+	-- },
 	
 	{ 
-		"catppuccin/nvim", 
-		name = "catppuccin", 
+		"bluz71/vim-moonfly-colors",
+		name = "moonfly",
+		lazy = false, 
 		priority = 1000,
 		config = function() 
-			require("catppuccin")
-			vim.cmd.colorscheme "catppuccin-nvim"
+			require("moonfly")
+			vim.cmd.colorscheme "moonfly"
 		end,
 	},
+	
+	----------
 
 	{
 			'nvim-telescope/telescope.nvim', version = '*',
