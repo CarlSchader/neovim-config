@@ -55,10 +55,10 @@ return {
 				options = {
 					offsets = {
 						{
-								filetype = "neo-tree",
-								text = "File Explorer",
-								text_align = "left",
-								separator = true -- use a "true" to enable the default, or set your own character
+							filetype = "neo-tree",
+							text = "File Explorer",
+							text_align = "left",
+							separator = true -- use a "true" to enable the default, or set your own character
 						}
 					},
 				},
@@ -68,24 +68,20 @@ return {
 
 	{ 'famiu/bufdelete.nvim', },
 
-	{ 
-		"lukas-reineke/indent-blankline.nvim", 
-		-- opts = {
-		-- 	char = "│",
-		-- 	show_trailing_blankline_indent = false,
-		-- },
+	{
+		"lukas-reineke/indent-blankline.nvim",
 		config = function()
 			require("ibl").setup()
 		end,
 	},
 
 	{
-			'nvim-telescope/telescope.nvim', version = '*',
-			dependencies = {
-					'nvim-lua/plenary.nvim',
-					-- optional but recommended
-					{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-			}
+		'nvim-telescope/telescope.nvim', version = '*',
+		dependencies = {
+			'nvim-lua/plenary.nvim',
+			-- optional but recommended
+			{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+		}
 	},
 
 	{
