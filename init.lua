@@ -53,20 +53,15 @@ vim.o.expandtab = false
 			-- Recursive bindings basically remap previous keybindings to new ones.
 		-- buffer: Boolean or number 
 
--- reload config
 vim.keymap.set('n', '<leader>rl', '<cmd>source %<cr>', { desc = 'Reload config' })
-
--- bring up lazy ui
-vim.keymap.set('n', '<leader>lz', '<cmd>Lazy<cr>', { desc = 'Reload config' })
-
--- exit insert mode
 vim.keymap.set('i', 'jk', '<ESC>', { desc = 'Exit insert mode overload' })
-
--- semi-colon also works for commands
 vim.keymap.set('n', ';', ':', { desc = 'Semi-colon also works for commands' })
+vim.keymap.set('n', '<leader>v', '<cmd>vsplit<cr>', { desc = 'Verical split' })
+vim.keymap.set('n', '<leader>tv', '<cmd>vsplit<cr><C-w>l<cmd>term<cr>i', { desc = 'Open terminal with vertical split' })
+vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { noremap = true, desc = 'Exit terminal mode' })
 
--- vertical split 
-vim.keymap.set('n', '<leader>v', '<cmd>vsplit<cr>', { desc = 'Open terminal' })
+-- lazy
+vim.keymap.set('n', '<leader>lz', '<cmd>Lazy<cr>', { desc = 'Reload config' })
 
 -- telescope
 local builtin = require('telescope.builtin')
