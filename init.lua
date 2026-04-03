@@ -65,8 +65,8 @@ vim.keymap.set('i', 'jk', '<ESC>', { desc = 'Exit insert mode overload' })
 -- semi-colon also works for commands
 vim.keymap.set('n', ';', ':', { desc = 'Semi-colon also works for commands' })
 
--- open terminal
-vim.keymap.set('n', '<leader>v', '<cmd>terminal<cr>', { desc = 'Open terminal' })
+-- vertical split 
+vim.keymap.set('n', '<leader>v', '<cmd>vsplit<cr>', { desc = 'Open terminal' })
 
 -- telescope
 local builtin = require('telescope.builtin')
@@ -77,3 +77,8 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help ta
 
 -- neotree
 vim.keymap.set('', '<leader>n', '<cmd>Neotree<cr>', { desc = 'Open file tree explorer' })
+
+-- bufferline
+vim.keymap.set('n', '<S-l>', '<cmd>BufferLineCycleNext<cr>', { desc = 'Go to next buffer' })
+vim.keymap.set('n', '<S-h>', '<cmd>BufferLineCyclePrev<cr>', { desc = 'Go to previous buffer' })
+vim.keymap.set('n', '<leader>x', '<cmd>Bdelete<cr>', { desc = 'Go to previous buffer' })

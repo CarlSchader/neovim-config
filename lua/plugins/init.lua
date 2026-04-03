@@ -46,6 +46,29 @@ return {
 	----------
 
 	{
+		'akinsho/bufferline.nvim',
+		version = "*",
+		dependencies = 'nvim-tree/nvim-web-devicons',
+		config = function()
+			vim.opt.termguicolors = true
+			require("bufferline").setup {
+				options = {
+					offsets = {
+						{
+								filetype = "neo-tree",
+								text = "File Explorer",
+								text_align = "left",
+								separator = true -- use a "true" to enable the default, or set your own character
+						}
+					},
+				},
+			}
+		end,
+	},
+
+	{ 'famiu/bufdelete.nvim', },
+
+	{
 			'nvim-telescope/telescope.nvim', version = '*',
 			dependencies = {
 					'nvim-lua/plenary.nvim',
@@ -54,8 +77,8 @@ return {
 			}
 	},
 
-  {
-    "nvim-neo-tree/neo-tree.nvim",
+	{
+		"nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
     dependencies = {
       "nvim-lua/plenary.nvim",
