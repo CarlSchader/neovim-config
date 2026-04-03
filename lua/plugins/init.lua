@@ -68,6 +68,17 @@ return {
 
 	{ 'famiu/bufdelete.nvim', },
 
+	{ 
+		"lukas-reineke/indent-blankline.nvim", 
+		-- opts = {
+		-- 	char = "│",
+		-- 	show_trailing_blankline_indent = false,
+		-- },
+		config = function()
+			require("ibl").setup()
+		end,
+	},
+
 	{
 			'nvim-telescope/telescope.nvim', version = '*',
 			dependencies = {
