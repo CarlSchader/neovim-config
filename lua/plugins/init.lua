@@ -23,18 +23,34 @@ return {
 	-- 	end,
 	-- },
 	
-	{ 
+	{
 		"bluz71/vim-moonfly-colors",
 		name = "moonfly",
 		lazy = false, 
 		priority = 1000,
-		config = function() 
+		config = function()
 			require("moonfly")
 			vim.cmd.colorscheme "moonfly"
 		end,
 	},
+
+	-- {
+	-- 	 "Zeddnyx/gruvbox.nvim",
+	-- 	 lazy = false,
+	-- 	 priority = 100,
+	-- 	 config = function()
+	-- 		 vim.cmd("colorscheme gruvbox")
+	-- 	 end
+	-- },
 	
 	----------
+
+	{
+		"neovim/nvim-lspconfig",
+		config = function()
+			require("config.lsp")
+		end,
+	},
 
 	{
 			'nvim-telescope/telescope.nvim', version = '*',
@@ -65,23 +81,35 @@ return {
 		},
 	},
 
-	  {
-			"f-person/git-blame.nvim",
-			-- load the plugin at startup
-			event = "VeryLazy",
-			-- Because of the keys part, you will be lazy loading this plugin.
-			-- The plugin wil only load once one of the keys is used.
-			-- If you want to load the plugin at startup, add something like event = "VeryLazy",
-			-- or lazy = false. One of both options will work.
-			opts = {
-					-- your configuration comes here
-					-- for example
-					enabled = true,  -- if you want to enable the plugin
-					message_template = " <summary> • <date> • <author> • <<sha>>", -- template for the blame message, check the Message template section for more options
-					date_format = "%m-%d-%Y", -- template for the date, check Date format section for more options
-					virtual_text_column = 1,  -- virtual text start column, check Start virtual text at column section for more options
-			},
+	{
+		'nvim-lualine/lualine.nvim',
+		dependencies = { 'nvim-tree/nvim-web-devicons' },
+		config = function()
+			require('lualine').setup {
+				options = {
+					theme = 'auto',
+				},
+			}
+		end,
+	},
+
+	{
+		"f-person/git-blame.nvim",
+		-- load the plugin at startup
+		event = "VeryLazy",
+		-- Because of the keys part, you will be lazy loading this plugin.
+		-- The plugin wil only load once one of the keys is used.
+		-- If you want to load the plugin at startup, add something like event = "VeryLazy",
+		-- or lazy = false. One of both options will work.
+		opts = {
+				-- your configuration comes here
+				-- for example
+				enabled = true,  -- if you want to enable the plugin
+				message_template = " <summary> • <date> • <author> • <<sha>>", -- template for the blame message, check the Message template section for more options
+				date_format = "%m-%d-%Y", -- template for the date, check Date format section for more options
+				virtual_text_column = 1,  -- virtual text start column, check Start virtual text at column section for more options
 		},
+	},
 
 	{
 	   "zbirenbaum/copilot.lua",

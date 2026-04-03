@@ -14,7 +14,7 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 
 -- highlight search results
-vim.o.hlsearch = false
+vim.o.hlsearch = true 
 
 -- wrap lines
 vim.o.wrap = true
@@ -55,6 +55,10 @@ vim.o.expandtab = false
 
 -- reload config
 vim.keymap.set('n', '<leader>rl', '<cmd>source %<cr>', { desc = 'Reload config' })
+
+-- bring up lazy ui
+vim.keymap.set('n', '<leader>lz', '<cmd>Lazy<cr>', { desc = 'Reload config' })
+
 -- exit insert mode
 vim.keymap.set('i', 'jk', '<ESC>', { desc = 'Exit insert mode overload' })
 

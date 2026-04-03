@@ -6,8 +6,6 @@
       neovim
       tree-sitter
       fzf
-      clang
-      tar
       ripgrep
       rust-analyzer
       ty
@@ -28,8 +26,6 @@
       neovim
       tree-sitter
       fzf
-      clang
-      tar
       ripgrep
       rust-analyzer
       ty
