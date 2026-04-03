@@ -1,7 +1,7 @@
 -- Plugins
 return {
 	-- Theme Plugins
-	
+
 	-- { 
 	-- 	"catppuccin/nvim", 
 	-- 	name = "catppuccin", 
@@ -22,7 +22,7 @@ return {
 	-- 			vim.cmd [[colorscheme tokyodark]]
 	-- 	end,
 	-- },
-	
+
 	{
 		"bluz71/vim-moonfly-colors",
 		name = "moonfly",
@@ -42,15 +42,8 @@ return {
 	-- 		 vim.cmd("colorscheme gruvbox")
 	-- 	 end
 	-- },
-	
-	----------
 
-	{
-		"neovim/nvim-lspconfig",
-		config = function()
-			require("config.lsp")
-		end,
-	},
+	----------
 
 	{
 			'nvim-telescope/telescope.nvim', version = '*',
@@ -112,23 +105,29 @@ return {
 	},
 
 	{
-	   "zbirenbaum/copilot.lua",
-	   event = "InsertEnter",
-	   cmd = "Copilot",
-	   config = function()
-	     require("copilot").setup({
-	       suggestion = {
-	         enabled = true,
-	         auto_trigger = true,
-	       },
-	       panel = { enabled = false },
-	     })
-	   end,
-	 },
+		"zbirenbaum/copilot.lua",
+		event = "InsertEnter",
+		cmd = "Copilot",
+		config = function()
+			require("copilot").setup({
+				suggestion = {
+				enabled = true,
+				auto_trigger = true,
+			},
+			panel = { enabled = false },
+		})
+		end,
+	},
 
 	{
     "hrsh7th/nvim-cmp",
     dependencies = {
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-nvim-lua",
+			"L3MON4D3/LuaSnip",
+			"saadparwaiz1/cmp_luasnip",
       {
         "zbirenbaum/copilot-cmp",
         config = function()
@@ -136,15 +135,59 @@ return {
         end,
       },
     },
-    opts = {
-      sources = {
-        { name = "nvim_lsp", group_index = 2 },
-        -- { name = "copilot",  group_index = 2 },
-        { name = "luasnip",  group_index = 2 },
-        { name = "buffer",   group_index = 2 },
-        { name = "nvim_lua", group_index = 2 },
-        { name = "path",     group_index = 2 },
-      },
-    },
+		opts = function(_, opts)
+			local has_words_before = function()
+				unpack = unpack or table.unpack
+				local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+				return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+			end
+
+			local cmp = require("cmp")
+
+			opts.sources = cmp.config.sources({
+				{ name = "nvim_lsp", group_index = 2 },
+				-- { name = "copilot",  group_index = 2 },
+				{ name = "luasnip",  group_index = 2 },
+				{ name = "buffer",   group_index = 2 },
+				{ name = "nvim_lua", group_index = 2 },
+				{ name = "path",     group_index = 2 },
+			})
+
+			opts.mapping = vim.tbl_extend("force", opts.mapping or {}, {
+				["<Tab>"] = cmp.mapping(function(fallback)
+					if cmp.visible() then
+						-- You could replace select_next_item() with confirm({ select = true }) to get VS Code autocompletion behavior
+						cmp.select_next_item()
+					elseif vim.snippet.active({ direction = 1 }) then
+						vim.schedule(function()
+							vim.snippet.jump(1)
+						end)
+					elseif has_words_before() then
+						cmp.complete()
+					else
+						fallback()
+					end
+				end, { "i", "s" }),
+				["<S-Tab>"] = cmp.mapping(function(fallback)
+					if cmp.visible() then
+						cmp.select_prev_item()
+					elseif vim.snippet.active({ direction = -1 }) then
+						vim.schedule(function()
+							vim.snippet.jump(-1)
+						end)
+					else
+						fallback()
+					end
+				end, { "i", "s" }),
+			})
+		end,
   },
+
+	-- needs to be defined after nvim-cmp
+	{
+		"neovim/nvim-lspconfig",
+		config = function()
+			require("config.lsp")
+		end,
+	},
 }
