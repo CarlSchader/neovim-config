@@ -23,10 +23,10 @@ vim.o.wrap = true
 vim.o.breakindent = true
 
 -- spaces per tab
-vim.o.tabstop = 2
+vim.o.tabstop = 4
 
 -- spaces per line indent ('<<' and '>>' are affected by this)
-vim.o.shiftwidth = 2
+vim.o.shiftwidth = 4
 
 -- transform tab to spaces
 vim.o.expandtab = false
