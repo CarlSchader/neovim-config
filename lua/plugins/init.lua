@@ -146,20 +146,20 @@ return {
 		},
 	},
 
-	-- {
-	-- 	"zbirenbaum/copilot.lua",
-	-- 	event = "InsertEnter",
-	-- 	cmd = "Copilot",
-	-- 	config = function()
-	-- 		require("copilot").setup({
-	-- 			suggestion = {
-	-- 			enabled = true,
-	-- 			auto_trigger = true,
-	-- 		},
-	-- 		panel = { enabled = false },
-	-- 	})
-	-- 	end,
-	-- },
+	{
+		"zbirenbaum/copilot.lua",
+		event = "InsertEnter",
+		cmd = "Copilot",
+		config = function()
+			require("copilot").setup({
+				suggestion = {
+					enabled = true,
+					auto_trigger = true,
+				},
+				panel = { enabled = false },
+			})
+		end,
+	},
 
 	{
 		"hrsh7th/nvim-cmp",
@@ -170,12 +170,12 @@ return {
 			"hrsh7th/cmp-nvim-lua",
 			"L3MON4D3/LuaSnip",
 			"saadparwaiz1/cmp_luasnip",
-			--  {
-			-- "zbirenbaum/copilot-cmp",
-			-- config = function()
-			--   require("copilot_cmp").setup()
-			-- end,
-			--  },
+			{
+				"zbirenbaum/copilot-cmp",
+				config = function()
+					require("copilot_cmp").setup()
+				end,
+			},
 		},
 		opts = function(_, opts)
 			local has_words_before = function()
@@ -189,7 +189,7 @@ return {
 
 			opts.sources = cmp.config.sources({
 				{ name = "nvim_lsp", group_index = 2 },
-				-- { name = "copilot",  group_index = 2 },
+				{ name = "copilot", group_index = 2 },
 				{ name = "luasnip", group_index = 2 },
 				{ name = "buffer", group_index = 2 },
 				{ name = "nvim_lua", group_index = 2 },

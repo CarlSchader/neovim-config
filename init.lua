@@ -62,6 +62,9 @@ vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { noremap = true, desc = "Exit term
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "Go to references" })
 vim.keymap.set("n", "<leader>ch", "<cmd>checkhealth<cr>", { desc = "Check Health shortcut" })
+vim.keymap.set("v", "(", "c()<Esc>P", { desc = "Wrap selection in parentheses" })
+vim.keymap.set("v", "[", "c[]<Esc>P", { desc = "Wrap selection in square brackets" })
+vim.keymap.set("v", "{", "c{}<Esc>P", { desc = "Wrap selection in curly brackets" })
 
 -- lazy
 vim.keymap.set("n", "<leader>lz", "<cmd>Lazy<cr>", { desc = "Reload config" })
