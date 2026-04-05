@@ -82,7 +82,13 @@ vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" 
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
 
 -- neotree
-vim.keymap.set("", "<leader>n", "<cmd>Neotree<cr>", { desc = "Open file tree explorer" })
+vim.keymap.set("", "<leader>n", function()
+	if vim.bo.filetype == "neo-tree" then
+		vim.cmd("wincmd p")
+	else
+		vim.cmd("Neotree focus")
+	end
+end, { desc = "Open file tree explorer" })
 
 -- bufferline
 vim.keymap.set("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "Go to next buffer" })
