@@ -2,11 +2,11 @@
 return {
 	-- Theme Plugins
 
-	-- { 
-	-- 	"catppuccin/nvim", 
-	-- 	name = "catppuccin", 
+	-- {
+	-- 	"catppuccin/nvim",
+	-- 	name = "catppuccin",
 	-- 	priority = 1000,
-	-- 	config = function() 
+	-- 	config = function()
 	-- 		require("catppuccin")
 	-- 		vim.cmd.colorscheme "catppuccin-nvim"
 	-- 	end,
@@ -26,11 +26,11 @@ return {
 	{
 		"bluz71/vim-moonfly-colors",
 		name = "moonfly",
-		lazy = false, 
+		lazy = false,
 		priority = 1000,
 		config = function()
 			require("moonfly")
-			vim.cmd.colorscheme "moonfly"
+			vim.cmd.colorscheme("moonfly")
 		end,
 	},
 
@@ -46,27 +46,27 @@ return {
 	----------
 
 	{
-		'akinsho/bufferline.nvim',
+		"akinsho/bufferline.nvim",
 		version = "*",
-		dependencies = 'nvim-tree/nvim-web-devicons',
+		dependencies = "nvim-tree/nvim-web-devicons",
 		config = function()
 			vim.opt.termguicolors = true
-			require("bufferline").setup {
+			require("bufferline").setup({
 				options = {
 					offsets = {
 						{
 							filetype = "neo-tree",
 							text = "File Explorer",
 							text_align = "left",
-							separator = true -- use a "true" to enable the default, or set your own character
-						}
+							separator = true, -- use a "true" to enable the default, or set your own character
+						},
 					},
 				},
-			}
+			})
 		end,
 	},
 
-	{ 'famiu/bufdelete.nvim', },
+	{ "famiu/bufdelete.nvim" },
 
 	{
 		"lukas-reineke/indent-blankline.nvim",
@@ -76,40 +76,39 @@ return {
 	},
 
 	{
-		'stevearc/conform.nvim',
+		"stevearc/conform.nvim",
 		opts = {},
 	},
 
 	{
-		'nvim-telescope/telescope.nvim', version = '*',
+		"nvim-telescope/telescope.nvim",
+		version = "*",
 		dependencies = {
-			'nvim-lua/plenary.nvim',
+			"nvim-lua/plenary.nvim",
 			-- optional but recommended
-			{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-		}
+			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+		},
 	},
 
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v3.x",
 		dependencies = {
-		  "nvim-lua/plenary.nvim",
-		  "MunifTanjim/nui.nvim",
-		  "nvim-tree/nvim-web-devicons", -- optional, but recommended
+			"nvim-lua/plenary.nvim",
+			"MunifTanjim/nui.nvim",
+			"nvim-tree/nvim-web-devicons", -- optional, but recommended
 		},
 		lazy = false, -- neo-tree will lazily load itself
 	},
 
 	{
-		'nvim-treesitter/nvim-treesitter',
+		"nvim-treesitter/nvim-treesitter",
 		lazy = false,
-		build = ':TSUpdate',
+		build = ":TSUpdate",
 		opts = {
-			highlight = { enable = true, },
+			highlight = { enable = true },
 		},
 	},
-
-	
 
 	{
 		"f-person/git-blame.nvim",
@@ -120,12 +119,30 @@ return {
 		-- If you want to load the plugin at startup, add something like event = "VeryLazy",
 		-- or lazy = false. One of both options will work.
 		opts = {
-				-- your configuration comes here
-				-- for example
-				enabled = true,  -- if you want to enable the plugin
-				message_template = " <summary> • <date> • <author> • <<sha>>", -- template for the blame message, check the Message template section for more options
-				date_format = "%m-%d-%Y", -- template for the date, check Date format section for more options
-				virtual_text_column = 1,  -- virtual text start column, check Start virtual text at column section for more options
+			-- your configuration comes here
+			-- for example
+			enabled = true, -- if you want to enable the plugin
+			message_template = " <summary> • <date> • <author> • <<sha>>", -- template for the blame message, check the Message template section for more options
+			date_format = "%m-%d-%Y", -- template for the date, check Date format section for more options
+			virtual_text_column = 1, -- virtual text start column, check Start virtual text at column section for more options
+		},
+	},
+
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		opts = {
+			-- your configuration comes here
+			-- or leave it empty to use the default settings
+		},
+		keys = {
+			{
+				"<leader>?",
+				function()
+					require("which-key").show({ global = false })
+				end,
+				desc = "Buffer Local Keymaps (which-key)",
+			},
 		},
 	},
 
@@ -147,12 +164,12 @@ return {
 	{
 		"hrsh7th/nvim-cmp",
 		dependencies = {
-				"hrsh7th/cmp-nvim-lsp",
-				"hrsh7th/cmp-buffer",
-				"hrsh7th/cmp-path",
-				"hrsh7th/cmp-nvim-lua",
-				"L3MON4D3/LuaSnip",
-				"saadparwaiz1/cmp_luasnip",
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-nvim-lua",
+			"L3MON4D3/LuaSnip",
+			"saadparwaiz1/cmp_luasnip",
 			--  {
 			-- "zbirenbaum/copilot-cmp",
 			-- config = function()
@@ -164,7 +181,8 @@ return {
 			local has_words_before = function()
 				unpack = unpack or table.unpack
 				local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-				return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+				return col ~= 0
+					and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 			end
 
 			local cmp = require("cmp")
@@ -172,10 +190,10 @@ return {
 			opts.sources = cmp.config.sources({
 				{ name = "nvim_lsp", group_index = 2 },
 				-- { name = "copilot",  group_index = 2 },
-				{ name = "luasnip",  group_index = 2 },
-				{ name = "buffer",   group_index = 2 },
+				{ name = "luasnip", group_index = 2 },
+				{ name = "buffer", group_index = 2 },
 				{ name = "nvim_lua", group_index = 2 },
-				{ name = "path",     group_index = 2 },
+				{ name = "path", group_index = 2 },
 			})
 
 			opts.mapping = vim.tbl_extend("force", opts.mapping or {}, {
@@ -213,25 +231,25 @@ return {
 	},
 
 	{
-		'nvim-lualine/lualine.nvim',
-		dependencies = { 
-			'nvim-tree/nvim-web-devicons', 
-			'neovim/nvim-lspconfig', 
+		"nvim-lualine/lualine.nvim",
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+			"neovim/nvim-lspconfig",
 		},
 		config = function()
-			require('lualine').setup {
+			require("lualine").setup({
 				options = {
-					theme = 'auto',
+					theme = "auto",
 					sections = {
-						lualine_a = {'mode'},
-						lualine_b = {'branch', 'diff', 'diagnostics'},
-						lualine_c = {'filename'},
-						lualine_x = {'encoding', 'filetype'},
-						lualine_y = {'lsp_status', 'progress', sources = {'nvim_lsp'}},
-						lualine_z = {'location'}
+						lualine_a = { "mode" },
+						lualine_b = { "branch", "diff", "diagnostics" },
+						lualine_c = { "filename" },
+						lualine_x = { "encoding", "filetype" },
+						lualine_y = { "lsp_status", "progress", sources = { "nvim_lsp" } },
+						lualine_z = { "location" },
 					},
 				},
-			}
+			})
 		end,
 	},
 }

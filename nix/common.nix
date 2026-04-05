@@ -19,5 +19,6 @@
     rustfmt
     nixfmt
     ruff
+    clang-tools
   ];
 }
