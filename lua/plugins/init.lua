@@ -68,6 +68,8 @@ return {
 
 	{ "famiu/bufdelete.nvim" },
 
+	{ "lewis6991/gitsigns.nvim" },
+
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		config = function()
