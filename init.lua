@@ -68,6 +68,8 @@ vim.keymap.set("n", "<leader>ch", "<cmd>checkhealth<cr>", { desc = "Check Health
 vim.keymap.set("v", "(", "c()<Esc>P", { desc = "Wrap selection in parentheses" })
 vim.keymap.set("v", "[", "c[]<Esc>P", { desc = "Wrap selection in square brackets" })
 vim.keymap.set("v", "{", "c{}<Esc>P", { desc = "Wrap selection in curly brackets" })
+vim.keymap.set("v", '"', 'c""<Esc>P', { desc = "Wrap selection in double quotes" })
+vim.keymap.set("v", "'", "c''<Esc>P", { desc = "Wrap selection in single quotes" })
 
 -- lazy
 vim.keymap.set("n", "<leader>lz", "<cmd>Lazy<cr>", { desc = "Reload config" })
