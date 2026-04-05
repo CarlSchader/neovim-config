@@ -88,6 +88,18 @@ return {
 			-- optional but recommended
 			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		},
+		config = function()
+			require("telescope").setup({
+				pickers = {
+					find_files = {
+						hidden = true,
+						-- Optional: if you want to include files ignored by .gitignore
+						-- no_ignore = true,
+					},
+				},
+			})
+			require("telescope").load_extension("fzf")
+		end,
 	},
 
 	{

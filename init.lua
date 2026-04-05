@@ -33,6 +33,9 @@ vim.o.shiftwidth = 2
 -- transform tab to spaces
 vim.o.expandtab = false
 
+-- yank to system clipboard and paste from system clipboard
+vim.opt.clipboard = "unnamedplus"
+
 -- Kebindings
 -- vim.keymap.set({mode}, {lhs}, {rhs}, {opts})
 -- modes:
