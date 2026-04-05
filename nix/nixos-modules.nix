@@ -1,39 +1,23 @@
 { ... }:
 {
-  nixosModules.default = { pkgs, ... }:
-  {
-    environment.systemPackages = with pkgs; [
-      neovim
-      tree-sitter
-      fzf
-      ripgrep
-      rust-analyzer
-      ty
-      typescript-language-server
-      lua-language-server
-      nixd
-      ccls
-    ];
+	nixosModules.default = { pkgs, ... }:
+	let
+		inherit (import ./common.nix { inherit pkgs; }) buildInputs;
+	in
+	  {
+		environment.systemPackages = buildInputs;
 
-    environment.etc."xdg/nvim" = {
-      source = ./..;
-    };
-  };
+		environment.etc."xdg/nvim" = {
+		  source = ./..;
+		};
+	  };
 
-  homeModules.default = { pkgs, lib, ... }:
+	homeModules.default = { pkgs, lib, ... }:
+	let
+	inherit (import ./common.nix { inherit pkgs; }) buildInputs;
+  in
   {
-    home.packages = with pkgs; [
-      neovim
-      tree-sitter
-      fzf
-      ripgrep
-      rust-analyzer
-      ty
-      typescript-language-server
-      lua-language-server
-      nixd
-      ccls
-    ];
+    home.packages = buildInputs;
 
     home.sessionVariables = {
       EDITOR = "nvim";

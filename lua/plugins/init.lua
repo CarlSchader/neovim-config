@@ -76,6 +76,11 @@ return {
 	},
 
 	{
+		'stevearc/conform.nvim',
+		opts = {},
+	},
+
+	{
 		'nvim-telescope/telescope.nvim', version = '*',
 		dependencies = {
 			'nvim-lua/plenary.nvim',
@@ -205,9 +210,6 @@ return {
 
 	{
 		"neovim/nvim-lspconfig",
-		config = function()
-			require("config.lsp")
-		end,
 	},
 
 	{
