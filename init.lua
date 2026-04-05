@@ -87,7 +87,7 @@ vim.keymap.set("", "<leader>n", "<cmd>Neotree<cr>", { desc = "Open file tree exp
 -- bufferline
 vim.keymap.set("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "Go to next buffer" })
 vim.keymap.set("n", "<S-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Go to previous buffer" })
-vim.keymap.set("n", "<leader>x", "<cmd>Bdelete<cr>", { desc = "Go to previous buffer" })
+vim.keymap.set("n", "<leader>x", "<cmd>Bdelete<cr>", { desc = "Delete current bufffer" })
 
 -- conform
 -- -- see lang.lua to see the Format command
