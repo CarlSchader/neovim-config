@@ -86,14 +86,14 @@ return {
 
 	{
 		"nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "MunifTanjim/nui.nvim",
-      "nvim-tree/nvim-web-devicons", -- optional, but recommended
-    },
-    lazy = false, -- neo-tree will lazily load itself
-  },
+		branch = "v3.x",
+		dependencies = {
+		  "nvim-lua/plenary.nvim",
+		  "MunifTanjim/nui.nvim",
+		  "nvim-tree/nvim-web-devicons", -- optional, but recommended
+		},
+		lazy = false, -- neo-tree will lazily load itself
+	},
 
 	{
 		'nvim-treesitter/nvim-treesitter',
@@ -104,25 +104,7 @@ return {
 		},
 	},
 
-	{
-		'nvim-lualine/lualine.nvim',
-		dependencies = { 'nvim-tree/nvim-web-devicons' },
-		config = function()
-			require('lualine').setup {
-				options = {
-					theme = 'auto',
-					sections = {
-						lualine_a = {'mode'},
-						lualine_b = {'branch', 'diff', 'diagnostics'},
-						lualine_c = {'filename'},
-						lualine_x = {'encoding', 'filetype', 'lsp_status', sources = {'nvim_lsp'}},
-						lualine_y = {'progress'},
-						lualine_z = {'location'}
-					},
-				},
-			}
-		end,
-	},
+	
 
 	{
 		"f-person/git-blame.nvim",
@@ -142,37 +124,37 @@ return {
 		},
 	},
 
-	{
-		"zbirenbaum/copilot.lua",
-		event = "InsertEnter",
-		cmd = "Copilot",
-		config = function()
-			require("copilot").setup({
-				suggestion = {
-				enabled = true,
-				auto_trigger = true,
-			},
-			panel = { enabled = false },
-		})
-		end,
-	},
+	-- {
+	-- 	"zbirenbaum/copilot.lua",
+	-- 	event = "InsertEnter",
+	-- 	cmd = "Copilot",
+	-- 	config = function()
+	-- 		require("copilot").setup({
+	-- 			suggestion = {
+	-- 			enabled = true,
+	-- 			auto_trigger = true,
+	-- 		},
+	-- 		panel = { enabled = false },
+	-- 	})
+	-- 	end,
+	-- },
 
 	{
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path",
-			"hrsh7th/cmp-nvim-lua",
-			"L3MON4D3/LuaSnip",
-			"saadparwaiz1/cmp_luasnip",
-      {
-        "zbirenbaum/copilot-cmp",
-        config = function()
-          require("copilot_cmp").setup()
-        end,
-      },
-    },
+		"hrsh7th/nvim-cmp",
+		dependencies = {
+				"hrsh7th/cmp-nvim-lsp",
+				"hrsh7th/cmp-buffer",
+				"hrsh7th/cmp-path",
+				"hrsh7th/cmp-nvim-lua",
+				"L3MON4D3/LuaSnip",
+				"saadparwaiz1/cmp_luasnip",
+			--  {
+			-- "zbirenbaum/copilot-cmp",
+			-- config = function()
+			--   require("copilot_cmp").setup()
+			-- end,
+			--  },
+		},
 		opts = function(_, opts)
 			local has_words_before = function()
 				unpack = unpack or table.unpack
@@ -219,13 +201,32 @@ return {
 				end, { "i", "s" }),
 			})
 		end,
-  },
+	},
 
-	-- needs to be defined after nvim-cmp
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
 			require("config.lsp")
+		end,
+	},
+
+	{
+		'nvim-lualine/lualine.nvim',
+		dependencies = { 'nvim-tree/nvim-web-devicons', 'neovim/nvim-lspconfig' },
+		config = function()
+			require('lualine').setup {
+				options = {
+					theme = 'auto',
+					sections = {
+						lualine_a = {'mode'},
+						lualine_b = {'branch', 'diff', 'diagnostics'},
+						lualine_c = {'filename'},
+						lualine_x = {'encoding', 'filetype'},
+						lualine_y = {'lsp_status', 'progress', sources = {'nvim_lsp'}},
+						lualine_z = {'location'}
+					},
+				},
+			}
 		end,
 	},
 }

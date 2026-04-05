@@ -61,6 +61,7 @@ vim.keymap.set('n', '<leader>tv', '<cmd>vsplit<cr><C-w>l<cmd>term<cr>i', { desc 
 vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { noremap = true, desc = 'Exit terminal mode' })
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
 vim.keymap.set('n', 'gr', vim.lsp.buf.references, { desc = 'Go to references' })
+vim.keymap.set('n', '<leader>ch', '<cmd>checkhealth<cr>', { desc = 'Check Health shortcut' })
 
 -- lazy
 vim.keymap.set('n', '<leader>lz', '<cmd>Lazy<cr>', { desc = 'Reload config' })
