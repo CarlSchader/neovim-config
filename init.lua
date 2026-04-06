@@ -4,6 +4,9 @@ require("config.lazy")
 -- Load language support
 require("config.lang")
 
+-- Load tree-sitter parsers (see /nix/nixos-modules.nix)
+vim.opt.runtimepath:prepend(vim.fn.stdpath("data") .. "/tree-sitter-parsers")
+
 -- Options (this list is certainly not exhaustive)
 
 -- line numbers

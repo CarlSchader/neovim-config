@@ -3,9 +3,9 @@
   buildInputs = with pkgs; [
     # base packages
     neovim
-    tree-sitter
     fzf
     ripgrep
+    fd
 
     # lsps
     rust-analyzer
@@ -21,4 +21,17 @@
     ruff
     clang-tools
   ];
+
+  treesitterParsers = pkgs.vimPlugins.nvim-treesitter.withPlugins (
+    p: with p; [
+      c
+      cpp
+      lua
+      rust
+      python
+      nix
+      markdown
+      markdown_inline
+    ]
+  );
 }

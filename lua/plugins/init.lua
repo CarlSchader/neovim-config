@@ -118,7 +118,7 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		lazy = false,
-		build = ":TSUpdate",
+		-- build = ":TSUpdate", -- this is needed if you are not using nix
 		opts = {
 			highlight = { enable = true },
 		},
