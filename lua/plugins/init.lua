@@ -45,6 +45,8 @@ return {
 
 	----------
 
+	{ "nvim-mini/mini.nvim", version = "*" },
+
 	{
 		"akinsho/bufferline.nvim",
 		version = "*",
