@@ -53,6 +53,11 @@ vim.keymap.set("i", "(", "()", { desc = "Auto type double parens" })
 vim.keymap.set("i", "[", "[]", { desc = "Auto type double square brackets" })
 vim.keymap.set("i", "{", "{}", { desc = "Auto type double curly brackets" })
 
+vim.keymap.set("n", "<A-h>", "<C-w>h", { desc = "<alt/option> instead of CTRL+w for nav left one pane" })
+vim.keymap.set("n", "<A-j>", "<C-w>j", { desc = "<alt/option> instead of CTRL+w for nav down one pane" })
+vim.keymap.set("n", "<A-k>", "<C-w>k", { desc = "<alt/option> instead of CTRL+w for nav up one pane" })
+vim.keymap.set("n", "<A-l>", "<C-w>l", { desc = "<alt/option> instead of CTRL+w for nav right one pane" })
+
 -- lazy
 vim.keymap.set("n", "<leader>lz", "<cmd>Lazy<cr>", { desc = "Reload config" })
 
