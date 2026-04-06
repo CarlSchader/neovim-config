@@ -60,19 +60,37 @@ vim.o.autoread = true
 -- buffer: Boolean or number
 
 vim.keymap.set("n", "<leader>rl", "<cmd>source %<cr>", { desc = "Reload config" })
-vim.keymap.set("n", "<leader>e", "<cmd>bufdo e<cr><cmd>checktime<cr>", { desc = "Reload all buffers" })
+
+vim.keymap.set("n", "<leader>e", function()
+	vim.cmd("bufdo e")
+	vim.cmd("checktime")
+	require("neo-tree.sources.manager").refresh("filesystem")
+end, { desc = "Reload all buffers" })
+
 vim.keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode overload" })
+
 vim.keymap.set("n", ";", ":", { desc = "Semi-colon also works for commands" })
+
 vim.keymap.set("n", "<leader>v", "<cmd>vsplit<cr>", { desc = "Verical split" })
+
 vim.keymap.set("n", "<leader>tv", "<cmd>vsplit<cr><C-w>l<cmd>term<cr>i", { desc = "Open terminal with vertical split" })
+
 vim.keymap.set("t", "<C-x>", [[<C-\><C-n>]], { noremap = true, desc = "Exit terminal mode" })
+
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+
 vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "Go to references" })
+
 vim.keymap.set("n", "<leader>ch", "<cmd>checkhealth<cr>", { desc = "Check Health shortcut" })
+
 vim.keymap.set("v", "(", "c()<Esc>P", { desc = "Wrap selection in parentheses" })
+
 vim.keymap.set("v", "[", "c[]<Esc>P", { desc = "Wrap selection in square brackets" })
+
 vim.keymap.set("v", "{", "c{}<Esc>P", { desc = "Wrap selection in curly brackets" })
+
 vim.keymap.set("v", '"', 'c""<Esc>P', { desc = "Wrap selection in double quotes" })
+
 vim.keymap.set("v", "'", "c''<Esc>P", { desc = "Wrap selection in single quotes" })
 
 -- lazy
