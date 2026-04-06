@@ -22,16 +22,14 @@
     clang-tools
   ];
 
-  treesitterParsers = pkgs.vimPlugins.nvim-treesitter-parsers (
-    p: with p; [
-      c
-      cpp
-      lua
-      rust
-      python
-      nix
-      markdown
-      markdown_inline
-    ]
-  );
+  treesitterParsers = with pkgs.vimPlugins.nvim-treesitter-parsers; [
+    c
+    cpp
+    lua
+    rust
+    python
+    nix
+    markdown
+    markdown_inline
+  ];
 }
