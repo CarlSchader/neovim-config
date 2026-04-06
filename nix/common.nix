@@ -22,7 +22,7 @@
     clang-tools
   ];
 
-  treesitterParsers = pkgs.vimPlugins.nvim-treesitter.withPlugins (
+  treesitterParsers = pkgs.vimPlugins.nvim-treesitter-parsers (
     p: with p; [
       c
       cpp

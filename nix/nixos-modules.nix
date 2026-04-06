@@ -13,7 +13,10 @@
       };
       # TODO: this is untested but it needs to map in lua to vim.fn.stdpath("data") .. "/tree-sitter-parsers"
       # environment.etc."xdg/tree-sitter-parsers" = {
-      #   source = treesitterParsers;
+      #   source = pkgs.symlinkJoin {
+      #   name = "treesitter-parsers";
+      #   path = treesitterParsers;
+      # };
       # };
     };
 
@@ -30,7 +33,10 @@
       };
 
       home.file.".local/share/nvim/tree-sitter-parsers" = {
-        source = treesitterParsers;
+        source = pkgs.symlinkJoin {
+          name = "treesitter-parsers";
+          path = treesitterParsers;
+        };
       };
 
       xdg.configFile."nvim" = {
