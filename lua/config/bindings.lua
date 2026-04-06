@@ -22,7 +22,13 @@
 vim.keymap.set("n", "<leader>rl", "<cmd>source %<cr>", { desc = "Reload config" })
 
 vim.keymap.set("n", "<leader>e", function()
-	vim.cmd("bufdo e")
+	for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+		if vim.api.nvim_buf_is_loaded(buf) and vim.bo[buf].buflisted and vim.api.nvim_buf_get_name(buf) ~= "" then
+			vim.api.nvim_buf_call(buf, function()
+				vim.cmd("e")
+			end)
+		end
+	end
 	vim.cmd("checktime")
 	require("neo-tree.sources.manager").refresh("filesystem")
 end, { desc = "Reload all buffers" })
@@ -49,9 +55,9 @@ vim.keymap.set("v", "{", "c{}<Esc>P", { desc = "Wrap selection in curly brackets
 vim.keymap.set("v", '"', 'c""<Esc>P', { desc = "Wrap selection in double quotes" })
 vim.keymap.set("v", "'", "c''<Esc>P", { desc = "Wrap selection in single quotes" })
 
-vim.keymap.set("i", "(", "()", { desc = "Auto type double parens" })
-vim.keymap.set("i", "[", "[]", { desc = "Auto type double square brackets" })
-vim.keymap.set("i", "{", "{}", { desc = "Auto type double curly brackets" })
+vim.keymap.set("i", "(", "()<ESC>hi", { desc = "Auto type double parens" })
+vim.keymap.set("i", "[", "[]<ESC>hi", { desc = "Auto type double square brackets" })
+vim.keymap.set("i", "{", "{}<ESC>hi", { desc = "Auto type double curly brackets" })
 
 vim.keymap.set("n", "<A-h>", "<C-w>h", { desc = "<alt/option> instead of CTRL+w for nav left one pane" })
 vim.keymap.set("n", "<A-j>", "<C-w>j", { desc = "<alt/option> instead of CTRL+w for nav down one pane" })
