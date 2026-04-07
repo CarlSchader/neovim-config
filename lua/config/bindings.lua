@@ -55,11 +55,11 @@ vim.keymap.set("v", "{", "c{}<Esc>P", { desc = "Wrap selection in curly brackets
 vim.keymap.set("v", '"', 'c""<Esc>P', { desc = "Wrap selection in double quotes" })
 vim.keymap.set("v", "'", "c''<Esc>P", { desc = "Wrap selection in single quotes" })
 
-vim.keymap.set("i", "(", "()<ESC>hi", { desc = "Auto type two parens" })
-vim.keymap.set("i", "[", "[]<ESC>hi", { desc = "Auto type two square brackets" })
-vim.keymap.set("i", "{", "{}<ESC>hi", { desc = "Auto type two curly brackets" })
-vim.keymap.set("i", '"', '"""<ESC>hi', { desc = "Auto type two double quotes" })
-vim.keymap.set("i", "'", "'''<ESC>hi", { desc = "Auto type two single quotes" })
+vim.keymap.set("i", "(", "()<ESC>i", { desc = "Auto type two parens" })
+vim.keymap.set("i", "[", "[]<ESC>i", { desc = "Auto type two square brackets" })
+vim.keymap.set("i", "{", "{}<ESC>i", { desc = "Auto type two curly brackets" })
+vim.keymap.set("i", '"', '""<ESC>i', { desc = "Auto type two double quotes" })
+vim.keymap.set("i", "'", "''<ESC>i", { desc = "Auto type two single quotes" })
 
 vim.keymap.set({ "n", "t" }, "<A-h>", "<C-w>h", { desc = "<alt/option> instead of CTRL+w for nav left one pane" })
 vim.keymap.set({ "n", "t" }, "<A-j>", "<C-w>j", { desc = "<alt/option> instead of CTRL+w for nav down one pane" })
