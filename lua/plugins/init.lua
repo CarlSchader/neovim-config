@@ -34,6 +34,8 @@ return {
 		end,
 	},
 
+	{ "EdenEast/nightfox.nvim" },
+
 	-- {
 	-- 	"Zeddnyx/gruvbox.nvim",
 	-- 	lazy = false,
