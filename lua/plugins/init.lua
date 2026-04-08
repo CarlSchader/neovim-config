@@ -8,18 +8,18 @@ return {
 	-- 	priority = 1000,
 	-- 	config = function()
 	-- 		require("catppuccin")
-	-- 		vim.cmd.colorscheme "catppuccin-nvim"
+	-- 		vim.cmd.colorscheme("catppuccin-nvim")
 	-- 	end,
 	-- },
 
 	-- {
 	-- 	"tiagovla/tokyodark.nvim",
 	-- 	opts = {
-	-- 			-- custom options here
+	-- 		-- custom options here
 	-- 	},
 	-- 	config = function(_, opts)
-	-- 			require("tokyodark").setup(opts) -- calling setup is optional
-	-- 			vim.cmd [[colorscheme tokyodark]]
+	-- 		require("tokyodark").setup(opts) -- calling setup is optional
+	-- 		vim.cmd([[colorscheme tokyodark]])
 	-- 	end,
 	-- },
 
@@ -35,12 +35,12 @@ return {
 	},
 
 	-- {
-	-- 	 "Zeddnyx/gruvbox.nvim",
-	-- 	 lazy = false,
-	-- 	 priority = 100,
-	-- 	 config = function()
-	-- 		 vim.cmd("colorscheme gruvbox")
-	-- 	 end
+	-- 	"Zeddnyx/gruvbox.nvim",
+	-- 	lazy = false,
+	-- 	priority = 100,
+	-- 	config = function()
+	-- 		vim.cmd("colorscheme gruvbox")
+	-- 	end,
 	-- },
 
 	----------
