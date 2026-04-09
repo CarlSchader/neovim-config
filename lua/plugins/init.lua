@@ -12,16 +12,7 @@ return {
 	-- 	end,
 	-- },
 
-	-- {
-	-- 	"tiagovla/tokyodark.nvim",
-	-- 	opts = {
-	-- 		-- custom options here
-	-- 	},
-	-- 	config = function(_, opts)
-	-- 		require("tokyodark").setup(opts) -- calling setup is optional
-	-- 		vim.cmd([[colorscheme tokyodark]])
-	-- 	end,
-	-- },
+	-- { "tiagovla/tokyodark.nvim" },
 
 	{
 		"bluz71/vim-moonfly-colors",
@@ -40,9 +31,6 @@ return {
 	-- 	"Zeddnyx/gruvbox.nvim",
 	-- 	lazy = false,
 	-- 	priority = 100,
-	-- 	config = function()
-	-- 		vim.cmd("colorscheme gruvbox")
-	-- 	end,
 	-- },
 
 	----------
