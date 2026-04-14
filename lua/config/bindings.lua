@@ -90,6 +90,10 @@ vim.keymap.set("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "Go to nex
 vim.keymap.set("n", "<S-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Go to previous buffer" })
 vim.keymap.set("n", "<leader>x", "<cmd>Bdelete<cr>", { desc = "Delete current bufffer" })
 
+-- tabnext and tabprev
+vim.keymap.set("n", "<leader><Tab>", "<cmd>tabnext<cr>", { desc = "Go to next tab" })
+vim.keymap.set("n", "<leader><S-Tab>", "<cmd>tabnext<cr>", { desc = "Go to next tab" })
+
 -- conform
 -- -- see lang.lua to see the Format command
 vim.keymap.set("n", "<leader>fm", "<cmd>Format<cr>", { desc = "Run formatter" })
