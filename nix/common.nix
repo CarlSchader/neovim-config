@@ -7,6 +7,7 @@
     ripgrep
     fd
     luajitPackages.jsregexp
+    lazygit
 
     # lsps
     rust-analyzer
