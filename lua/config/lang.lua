@@ -1,6 +1,7 @@
 -- Language Support Features
 --
 -- -- Make sure that common.nix buildInputs has packages for all of these lsps and formatters.
+-- -- Also make sure common.nix buildInputs has the correct treesitter parsers
 
 -- LSP config
 
@@ -12,6 +13,8 @@ local servers = {
 	"nixd",
 	"lua_ls",
 	"ccls",
+	"bashls",
+	"markdown_oxide",
 }
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -24,6 +27,8 @@ for _, server in ipairs(servers) do
 end
 
 -- Formatters
+-- See this list for available formatters
+-- https://github.com/stevearc/conform.nvim?tab=readme-ov-file#formatters
 
 require("conform").setup({
 	formatters_by_ft = {
@@ -33,6 +38,9 @@ require("conform").setup({
 		rust = { "rustfmt" },
 		c = { "clang-format" },
 		cpp = { "clang-format" },
+		bash = { "shfmt" },
+		sh = { "shfmt" },
+		markdown = { "dprint" },
 	},
 	format_on_save = {
 		-- These options will be passed to conform.format()
