@@ -46,7 +46,7 @@ vim.keymap.set("t", "<C-x>", [[<C-\><C-n>]], { noremap = true, desc = "Exit term
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 
 vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "Go to references" })
-vim.keymap.set("n", "rn", vim.lsp.buf.rename(), { desc = "Rename references" })
+vim.keymap.set("n", "rn", vim.lsp.buf.rename, { desc = "Rename references" })
 
 vim.keymap.set("n", "<leader>ch", "<cmd>checkhealth<cr>", { desc = "Check Health shortcut" })
 
