@@ -18,6 +18,10 @@
       #   	paths = treesitterParsers;
       # 	};
       # };
+
+      environment.etx."xdg/dprint/dprint.jsonc" = {
+        source = ./../dprint.jsonc;
+      };
     };
 
   homeModules.default =
@@ -43,6 +47,13 @@
         source = lib.cleanSourceWith {
           src = ./..;
           filter = path: type: !(lib.hasPrefix "lazy-lock.json" path);
+        };
+        recursive = true;
+      };
+
+      xdg.configFile."dprint/dprint.jsonc" = {
+        source = lib.cleanSourceWith {
+          src = ./../dprint.jsonc;
         };
         recursive = true;
       };
