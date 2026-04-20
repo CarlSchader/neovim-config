@@ -56,14 +56,45 @@ local function refresh_theme()
 	end, 200)
 end
 
-vim.api.nvim_create_autocmd("FocusGained", {
-	callback = function()
-		refresh_theme()
-	end,
-})
+local uv = vim.uv or vim.loop
+local watcher = nil
+
+local function start_watcher()
+	if watcher then
+		pcall(function()
+			watcher:stop()
+		end)
+		pcall(function()
+			watcher:close()
+		end)
+		watcher = nil
+	end
+
+	watcher = uv.new_fs_event()
+	if not watcher then
+		vim.notify("Error starting fs watcher for theme", vim.log.levels.WARN)
+		return
+	end
+
+	local ok, err = pcall(function()
+		watcher:start(
+			THEME_PATH,
+			{},
+			vim.schedule_wrap(function(fs_err)
+				if fs_err then
+					vim.notify("Theme watcher error: " .. fs_err, vim.log.levels.WARN)
+					return
+				end
+				refresh_theme()
+				start_watcher()
+			end)
+		)
+	end)
+
+	if not ok then
+		vim.notify("Theme watcher failed to start: " .. tostring(err), vim.log.levels.WARN)
+	end
+end
 
 refresh_theme()
-
-return {
-	refresh_theme = refresh_theme,
-}
+start_watcher()
