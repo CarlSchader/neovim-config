@@ -4,8 +4,6 @@ return {
 
 	{ "bluz71/vim-moonfly-colors" },
 
-	{ "EdenEast/nightfox.nvim" },
-
 	----------
 
 	{ "nvim-mini/mini.nvim", version = "*" },

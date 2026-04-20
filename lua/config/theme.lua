@@ -1,5 +1,5 @@
 local DARK_COLOR_SCHEME = "moonfly"
-local LIGHT_COLOR_SCHEME = "dayfox"
+local LIGHT_COLOR_SCHEME = "one-light"
 
 local THEME_PATH = os.getenv("HOME") .. "/.local/state/theme"
 local last_theme = nil
