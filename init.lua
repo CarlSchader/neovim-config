@@ -14,3 +14,6 @@ require("config.options")
 
 -- Load keybindings
 require("config.bindings")
+
+-- Load theme
+require("config.theme")

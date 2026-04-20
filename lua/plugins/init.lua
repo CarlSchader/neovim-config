@@ -2,36 +2,9 @@
 return {
 	-- Theme Plugins
 
-	-- {
-	-- 	"catppuccin/nvim",
-	-- 	name = "catppuccin",
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		require("catppuccin")
-	-- 		vim.cmd.colorscheme("catppuccin-nvim")
-	-- 	end,
-	-- },
-
-	-- { "tiagovla/tokyodark.nvim" },
-
-	{
-		"bluz71/vim-moonfly-colors",
-		name = "moonfly",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("moonfly")
-			vim.cmd.colorscheme("moonfly")
-		end,
-	},
+	{ "bluz71/vim-moonfly-colors" },
 
 	{ "EdenEast/nightfox.nvim" },
-
-	-- {
-	-- 	"Zeddnyx/gruvbox.nvim",
-	-- 	lazy = false,
-	-- 	priority = 100,
-	-- },
 
 	----------
 
