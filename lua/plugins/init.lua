@@ -52,6 +52,22 @@ return {
 		},
 	},
 
+	{
+		"ruifm/gitlinker.nvim",
+		dependencies = "nvim-lua/plenary.nvim",
+		config = function()
+			require("gitlinker").setup({
+				opts = {
+					remote = nil, -- force use of a specific remote
+					add_current_line_on_normal_mode = true,
+					action_callback = require("gitlinker.actions").copy_to_clipboard,
+					print_url = true,
+				},
+				mappings = "<leader>gy", -- Default mapping to copy link
+			})
+		end,
+	},
+
 	{ "lewis6991/gitsigns.nvim" },
 
 	{
