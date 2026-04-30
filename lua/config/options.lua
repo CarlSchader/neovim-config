@@ -33,5 +33,5 @@ vim.opt.clipboard = "unnamedplus"
 -- auto read changed files when switching back and forth from neovim
 vim.o.autoread = true
 
--- disable swap file
+-- disable swap file globally
 vim.opt.swapfile = false
