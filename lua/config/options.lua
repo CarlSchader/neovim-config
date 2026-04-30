@@ -34,4 +34,4 @@ vim.opt.clipboard = "unnamedplus"
 vim.o.autoread = true
 
 -- disable swap file
-vim.opt.swapFile = false
+vim.opt.swapfile = false
