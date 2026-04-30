@@ -67,6 +67,8 @@ vim.keymap.set({ "n", "t" }, "<A-j>", "<C-w>j", { desc = "<alt/option> instead o
 vim.keymap.set({ "n", "t" }, "<A-k>", "<C-w>k", { desc = "<alt/option> instead of CTRL+w for nav up one pane" })
 vim.keymap.set({ "n", "t" }, "<A-l>", "<C-w>l", { desc = "<alt/option> instead of CTRL+w for nav right one pane" })
 
+vim.api.nvim_create_user_command("Nw", "noautocmd w", { desc = "Write without triggering autocmds" })
+
 -- lazy
 vim.keymap.set("n", "<leader>lz", "<cmd>Lazy<cr>", { desc = "Reload config" })
 
