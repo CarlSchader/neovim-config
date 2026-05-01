@@ -69,8 +69,10 @@ vim.keymap.set({ "n", "t" }, "<A-l>", "<C-w>l", { desc = "<alt/option> instead o
 
 vim.api.nvim_create_user_command("Nw", "noautocmd w", { desc = "Write without triggering autocmds" })
 
--- lazy
-vim.keymap.set("n", "<leader>lz", "<cmd>Lazy<cr>", { desc = "Reload config" })
+-- lazy (only available when using lazy.nvim, not nix-managed plugins)
+if not vim.env.NIX_NEOVIM then
+	vim.keymap.set("n", "<leader>lz", "<cmd>Lazy<cr>", { desc = "Open Lazy plugin manager" })
+end
 
 -- telescope
 local builtin = require("telescope.builtin")

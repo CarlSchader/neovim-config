@@ -1,44 +1,33 @@
 { pkgs }:
+let
+  wrappedNeovim = import ./neovim.nix { inherit pkgs; };
+in
 {
-  buildInputs = with pkgs; [
-    # base packages
-    neovim
-    fzf
-    ripgrep
-    fd
-    luajitPackages.jsregexp
-    lazygit
+  buildInputs = [
+    wrappedNeovim
+
+    # runtime tools neovim shells out to
+    pkgs.fzf
+    pkgs.ripgrep
+    pkgs.fd
+    pkgs.lazygit
 
     # lsps
-    rust-analyzer
-    ty
-    lua-language-server
-    nixd
-    ccls
-    bash-language-server
-    markdown-oxide
+    pkgs.rust-analyzer
+    pkgs.ty
+    pkgs.lua-language-server
+    pkgs.nixd
+    pkgs.ccls
+    pkgs.bash-language-server
+    pkgs.markdown-oxide
 
     # formatters
-    stylua
-    rustfmt
-    nixfmt
-    ruff
-    clang-tools
-    shfmt
-    dprint
-  ];
-
-  # For available parsers, see:
-  # https://search.nixos.org/packages?channel=unstable&include_modular_service_options=1&include_nixos_options=1&query=nvim-treesitter-parsers
-  treesitterParsers = with pkgs.vimPlugins.nvim-treesitter-parsers; [
-    c
-    cpp
-    lua
-    rust
-    python
-    nix
-    bash
-    markdown
-    markdown_inline
+    pkgs.stylua
+    pkgs.rustfmt
+    pkgs.nixfmt
+    pkgs.ruff
+    pkgs.clang-tools
+    pkgs.shfmt
+    pkgs.dprint
   ];
 }
