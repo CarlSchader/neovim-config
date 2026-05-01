@@ -3,11 +3,11 @@ flake-utils.lib.eachDefaultSystem (
   system:
   let
     pkgs = import nixpkgs { inherit system; };
-    inherit (import ./common.nix { inherit pkgs; }) buildInputs;
+    extraPackages = import ./extra-packages.nix { inherit pkgs; };
   in
   {
     devShells.default = pkgs.mkShell {
-      inherit buildInputs;
+      buildInputs = extraPackages;
     };
   }
 )
