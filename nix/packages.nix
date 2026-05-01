@@ -6,6 +6,8 @@ flake-utils.lib.eachDefaultSystem (
 
     extraPackages = import ./extra-packages.nix { inherit pkgs; };
 
+    configSrc = pkgs.lib.cleanSource ./..;
+
     treesitterWithParsers = pkgs.vimPlugins.nvim-treesitter.withPlugins (p: [
       p.c
       p.cpp
@@ -80,6 +82,9 @@ flake-utils.lib.eachDefaultSystem (
           "--set"
           "NIX_NEOVIM"
           "1"
+          "--set"
+          "VIMINIT"
+          "set rtp^=${configSrc} | source ${configSrc}/init.lua"
           "--suffix"
           "PATH"
           ":"
