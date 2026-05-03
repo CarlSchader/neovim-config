@@ -6,6 +6,10 @@
   pkgs.fd
   pkgs.lazygit
 
+  # image.nvim
+  pkgs.imagemagick
+  pkgs.curl
+
   # lsps
   pkgs.rust-analyzer
   pkgs.ty

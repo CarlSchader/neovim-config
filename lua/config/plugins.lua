@@ -27,6 +27,9 @@ require("neo-tree").setup({
 	},
 })
 
+-- image
+require("image").setup()
+
 -- gitlinker
 require("gitlinker").setup({
 	opts = {

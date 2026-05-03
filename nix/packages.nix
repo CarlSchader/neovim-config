@@ -34,6 +34,7 @@ flake-utils.lib.eachDefaultSystem (
       which-key-nvim
       neo-tree-nvim
       nui-nvim
+      image-nvim
 
       # git
       lazygit-nvim
