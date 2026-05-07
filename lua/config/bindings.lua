@@ -42,6 +42,10 @@ vim.keymap.set("n", "<leader>v", "<cmd>vsplit<cr>", { desc = "Verical split" })
 vim.keymap.set("n", "<leader>tv", "<cmd>vsplit<cr><C-w>l<cmd>term<cr>i", { desc = "Open terminal with vertical split" })
 
 vim.keymap.set("t", "<C-x>", [[<C-\><C-n>]], { noremap = true, desc = "Exit terminal mode" })
+vim.keymap.set("t", "<C-h>", [[<C-\><C-n><C-w>h]], { noremap = true, desc = "Exit terminal mode" })
+vim.keymap.set("t", "<C-j>", [[<C-\><C-n><C-w>j]], { noremap = true, desc = "Exit terminal mode" })
+vim.keymap.set("t", "<C-k>", [[<C-\><C-n><C-w>k]], { noremap = true, desc = "Exit terminal mode" })
+vim.keymap.set("t", "<C-l>", [[<C-\><C-n><C-w>l]], { noremap = true, desc = "Exit terminal mode" })
 
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 
@@ -62,10 +66,10 @@ vim.keymap.set("i", "{", "{}<ESC>i", { desc = "Auto type two curly brackets" })
 vim.keymap.set("i", '"', '""<ESC>i', { desc = "Auto type two double quotes" })
 -- vim.keymap.set("i", "'", "''<ESC>i", { desc = "Auto type two single quotes" })
 
-vim.keymap.set({ "n", "t" }, "<A-h>", "<C-w>h", { desc = "<alt/option> instead of CTRL+w for nav left one pane" })
-vim.keymap.set({ "n", "t" }, "<A-j>", "<C-w>j", { desc = "<alt/option> instead of CTRL+w for nav down one pane" })
-vim.keymap.set({ "n", "t" }, "<A-k>", "<C-w>k", { desc = "<alt/option> instead of CTRL+w for nav up one pane" })
-vim.keymap.set({ "n", "t" }, "<A-l>", "<C-w>l", { desc = "<alt/option> instead of CTRL+w for nav right one pane" })
+vim.keymap.set({ "n", "t" }, "<C-h>", "<C-w>h", { desc = "<CTRL+h> instead of CTRL+w+h for nav left one pane" })
+vim.keymap.set({ "n", "t" }, "<C-j>", "<C-w>j", { desc = "<CTRL+j> instead of CTRL+w+j for nav down one pane" })
+vim.keymap.set({ "n", "t" }, "<C-k>", "<C-w>k", { desc = "<CTRL+k> instead of CTRL+w+k for nav up one pane" })
+vim.keymap.set({ "n", "t" }, "<C-l>", "<C-w>l", { desc = "<CTRL+l> instead of CTRL+w+l for nav right one pane" })
 
 vim.api.nvim_create_user_command("Nw", "noautocmd w", { desc = "Write without triggering autocmds" })
 
