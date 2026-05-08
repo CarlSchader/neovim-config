@@ -1,30 +1,32 @@
 { pkgs }:
+with pkgs;
 [
   # runtime tools neovim shells out to
-  pkgs.fzf
-  pkgs.ripgrep
-  pkgs.fd
-  pkgs.lazygit
+  fzf
+  ripgrep
+  fd
+  lazygit
 
   # image.nvim
-  pkgs.imagemagick
-  pkgs.curl
+  imagemagick
+  curl
 
   # lsps
-  pkgs.rust-analyzer
-  pkgs.ty
-  pkgs.lua-language-server
-  pkgs.nixd
-  pkgs.ccls
-  pkgs.bash-language-server
-  pkgs.markdown-oxide
+  rust-analyzer
+  ty
+  pyright
+  lua-language-server
+  nixd
+  ccls
+  bash-language-server
+  markdown-oxide
 
   # formatters
-  pkgs.stylua
-  pkgs.rustfmt
-  pkgs.nixfmt
-  pkgs.ruff
-  pkgs.clang-tools
-  pkgs.shfmt
-  pkgs.dprint
+  stylua
+  rustfmt
+  nixfmt
+  ruff
+  clang-tools
+  shfmt
+  dprint
 ]

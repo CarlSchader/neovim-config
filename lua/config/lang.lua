@@ -26,6 +26,21 @@ for _, server in ipairs(servers) do
 	vim.lsp.enable(server)
 end
 
+-- special lsp configs
+vim.lsp.config("pyright", { -- pyright used for stuff ty doesn't cover
+	capabilities = capabilities,
+	settings = {
+		pyright = {
+			disableOrganizeImports = true,
+		},
+		python = {
+			analysis = {
+				diagnosticMode = "off",
+			},
+		},
+	},
+})
+
 -- Formatters
 -- See this list for available formatters
 -- https://github.com/stevearc/conform.nvim?tab=readme-ov-file#formatters
