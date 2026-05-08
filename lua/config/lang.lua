@@ -40,6 +40,7 @@ vim.lsp.config("pyright", { -- pyright used for stuff ty doesn't cover
 		},
 	},
 })
+vim.lsp.enable("pyright")
 
 -- Formatters
 -- See this list for available formatters
