@@ -63,12 +63,6 @@ require("telescope").setup({
 })
 require("telescope").load_extension("fzf")
 
--- nvim-treesitter
-require("nvim-treesitter.configs").setup({
-	highlight = { enable = true },
-	auto_install = not vim.env.NIX_NEOVIM,
-})
-
 -- git-blame
 require("gitblame").setup({
 	enabled = true,
