@@ -30,6 +30,12 @@ require("neo-tree").setup({
 -- image
 require("image").setup()
 
+-- mini
+-- -- in visual mode sa + <char> surrounds selection in char
+require("mini.surround").setup()
+-- -- auto types double chars for chars that typically wrap like parens
+require("mini.pairs").setup()
+
 -- gitlinker
 require("gitlinker").setup({
 	opts = {

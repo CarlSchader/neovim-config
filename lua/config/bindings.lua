@@ -54,18 +54,6 @@ vim.keymap.set({ "n", "v" }, "<leader>rn", vim.lsp.buf.rename, { desc = "Rename 
 
 vim.keymap.set("n", "<leader>ch", "<cmd>checkhealth<cr>", { desc = "Check Health shortcut" })
 
-vim.keymap.set("v", "(", "c()<Esc>P", { desc = "Wrap selection in parentheses" })
-vim.keymap.set("v", "[", "c[]<Esc>P", { desc = "Wrap selection in square brackets" })
-vim.keymap.set("v", "{", "c{}<Esc>P", { desc = "Wrap selection in curly brackets" })
-vim.keymap.set("v", '"', 'c""<Esc>P', { desc = "Wrap selection in double quotes" })
-vim.keymap.set("v", "'", "c''<Esc>P", { desc = "Wrap selection in single quotes" })
-
-vim.keymap.set("i", "(", "()<ESC>i", { desc = "Auto type two parens" })
-vim.keymap.set("i", "[", "[]<ESC>i", { desc = "Auto type two square brackets" })
-vim.keymap.set("i", "{", "{}<ESC>i", { desc = "Auto type two curly brackets" })
-vim.keymap.set("i", '"', '""<ESC>i', { desc = "Auto type two double quotes" })
--- vim.keymap.set("i", "'", "''<ESC>i", { desc = "Auto type two single quotes" })
-
 vim.keymap.set({ "n", "t" }, "<C-h>", "<C-w>h", { desc = "<CTRL+h> instead of CTRL+w+h for nav left one pane" })
 vim.keymap.set({ "n", "t" }, "<C-j>", "<C-w>j", { desc = "<CTRL+j> instead of CTRL+w+j for nav down one pane" })
 vim.keymap.set({ "n", "t" }, "<C-k>", "<C-w>k", { desc = "<CTRL+k> instead of CTRL+w+k for nav up one pane" })
