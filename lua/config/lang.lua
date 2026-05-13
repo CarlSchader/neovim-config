@@ -27,7 +27,7 @@ for _, server in ipairs(servers) do
 end
 
 -- special lsp configs
-vim.lsp.config("pyright", { -- pyright used for stuff ty doesn't cover
+vim.lsp.config("pyright", { -- pyright used only for rename; ty handles everything else
 	capabilities = capabilities,
 	settings = {
 		pyright = {
@@ -39,6 +39,14 @@ vim.lsp.config("pyright", { -- pyright used for stuff ty doesn't cover
 			},
 		},
 	},
+	on_init = function(client)
+		local keep = { renameProvider = true, textDocumentSync = true, positionEncoding = true }
+		for cap in pairs(client.server_capabilities) do
+			if not keep[cap] then
+				client.server_capabilities[cap] = nil
+			end
+		end
+	end,
 })
 vim.lsp.enable("pyright")
 
