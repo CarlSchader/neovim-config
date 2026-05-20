@@ -91,12 +91,4 @@ return {
 		"zbirenbaum/copilot-cmp",
 		dependencies = { "zbirenbaum/copilot.lua" },
 	},
-},
-
--- Jupyter Notebooks
-
-{
-	"GCBallesteros/jupytext.nvim",
-	config = true,
-	lazy = false,
-},
+}
