@@ -84,3 +84,10 @@ vim.api.nvim_create_user_command("Format", function(args)
 	end
 	require("conform").format({ async = true, lsp_format = "fallback", range = range })
 end, { range = true })
+
+vim.diagnostic.config({
+	virtual_text = true, -- LSP shows errors inline with the code
+	signs = true, -- LSP shows errors in the gutter
+	underline = true, -- LSP underlines errors in the code
+	update_in_insert = false, -- Don't update diagnostics while in insert mode
+})
