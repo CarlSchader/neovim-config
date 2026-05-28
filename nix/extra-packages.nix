@@ -1,6 +1,5 @@
-{ pkgs }:
-with pkgs;
-[
+{pkgs, ...}:
+with pkgs; [
   # runtime tools neovim shells out to
   fzf
   ripgrep
@@ -24,7 +23,7 @@ with pkgs;
   # formatters
   stylua
   rustfmt
-  nixfmt
+  alejandra
   ruff
   clang-tools
   shfmt

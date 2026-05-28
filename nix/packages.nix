@@ -1,10 +1,13 @@
-{ nixpkgs, flake-utils, ... }:
+{
+  nixpkgs,
+  flake-utils,
+  ...
+}:
 flake-utils.lib.eachDefaultSystem (
-  system:
-  let
-    pkgs = import nixpkgs { inherit system; };
+  system: let
+    pkgs = import nixpkgs {inherit system;};
 
-    extraPackages = import ./extra-packages.nix { inherit pkgs; };
+    extraPackages = import ./extra-packages.nix {inherit pkgs;};
 
     configSrc = pkgs.lib.cleanSource ./..;
 
@@ -67,30 +70,31 @@ flake-utils.lib.eachDefaultSystem (
     ];
 
     neovimConfig = pkgs.neovimUtils.makeNeovimConfig {
-      plugins = map (plugin: { inherit plugin; }) plugins;
-      extraLuaPackages = ps: [ ps.jsregexp ];
+      plugins = map (plugin: {inherit plugin;}) plugins;
+      extraLuaPackages = ps: [ps.jsregexp];
       withPython3 = false;
       withNodeJs = false;
       withRuby = false;
     };
-  in
-  {
+  in {
     packages.default = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped (
       neovimConfig
       // {
         wrapRc = false;
-        wrapperArgs = neovimConfig.wrapperArgs ++ [
-          "--set"
-          "NIX_NEOVIM"
-          "1"
-          "--set"
-          "VIMINIT"
-          "set rtp^=${configSrc} | source ${configSrc}/init.lua"
-          "--suffix"
-          "PATH"
-          ":"
-          "${pkgs.lib.makeBinPath extraPackages}"
-        ];
+        wrapperArgs =
+          neovimConfig.wrapperArgs
+          ++ [
+            "--set"
+            "NIX_NEOVIM"
+            "1"
+            "--set"
+            "VIMINIT"
+            "set rtp^=${configSrc} | source ${configSrc}/init.lua"
+            "--suffix"
+            "PATH"
+            ":"
+            "${pkgs.lib.makeBinPath extraPackages}"
+          ];
       }
     );
   }

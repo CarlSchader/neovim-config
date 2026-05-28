@@ -4,8 +4,7 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs =
-    { flake-utils, ... }@inputs:
+  outputs = {flake-utils, ...} @ inputs:
     flake-utils.lib.meld inputs [
       ./nix
     ];
