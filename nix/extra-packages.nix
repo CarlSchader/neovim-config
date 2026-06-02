@@ -29,4 +29,5 @@ with pkgs; [
   clang-tools
   shfmt
   dprint
+  swiftformat
 ]

@@ -66,7 +66,7 @@ require("conform").setup({
 		bash = { "shfmt" },
 		sh = { "shfmt" },
 		markdown = { "dprint" },
-		swift = { "swift" },
+		swift = { "swiftformat" },
 	},
 	format_on_save = {
 		-- These options will be passed to conform.format()
