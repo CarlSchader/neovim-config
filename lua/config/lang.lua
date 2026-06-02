@@ -15,6 +15,7 @@ local servers = {
 	"ccls",
 	"bashls",
 	"markdown_oxide",
+	"sourcekit",
 }
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -65,6 +66,7 @@ require("conform").setup({
 		bash = { "shfmt" },
 		sh = { "shfmt" },
 		markdown = { "dprint" },
+		swift = { "swift" },
 	},
 	format_on_save = {
 		-- These options will be passed to conform.format()

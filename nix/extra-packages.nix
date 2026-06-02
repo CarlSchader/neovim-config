@@ -19,6 +19,7 @@ with pkgs; [
   ccls
   bash-language-server
   markdown-oxide
+  sourcekit-lsp
 
   # formatters
   stylua
