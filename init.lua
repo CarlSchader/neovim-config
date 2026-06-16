@@ -20,4 +20,4 @@ require("config.options")
 require("config.bindings")
 
 -- Load theme
-require("config.theme")
+require("modules.theme").setup()
