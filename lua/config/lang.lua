@@ -12,13 +12,19 @@ local servers = {
 	"ty",
 	"nixd",
 	"lua_ls",
-	"ccls",
 	"bashls",
 	"markdown_oxide",
 	"sourcekit",
 }
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+vim.filetype.add({
+	extension = {
+		cu = "cuda",
+		cuh = "cuda",
+	},
+})
 
 for _, server in ipairs(servers) do
 	vim.lsp.config(server, {
@@ -50,6 +56,12 @@ vim.lsp.config("pyright", { -- pyright used only for rename; ty handles everythi
 	end,
 })
 vim.lsp.enable("pyright")
+
+vim.lsp.config("ccls", {
+	capabilities = capabilities,
+	filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
+})
+vim.lsp.enable("ccls")
 
 -- Formatters
 -- See this list for available formatters
