@@ -16,10 +16,9 @@ with pkgs; [
   pyright
   lua-language-server
   nixd
-  ccls
+  clang-tools
   bash-language-server
   markdown-oxide
-  sourcekit-lsp
 
   # formatters
   stylua

@@ -14,7 +14,8 @@ local servers = {
 	"lua_ls",
 	"bashls",
 	"markdown_oxide",
-	"sourcekit",
+	"clangd",
+	-- "sourcekit",
 }
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -56,12 +57,6 @@ vim.lsp.config("pyright", { -- pyright used only for rename; ty handles everythi
 	end,
 })
 vim.lsp.enable("pyright")
-
-vim.lsp.config("ccls", {
-	capabilities = capabilities,
-	filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
-})
-vim.lsp.enable("ccls")
 
 -- Formatters
 -- See this list for available formatters
