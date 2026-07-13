@@ -84,11 +84,4 @@ return {
 			"saadparwaiz1/cmp_luasnip",
 		},
 	},
-
-	-- Copilot
-	{ "zbirenbaum/copilot.lua" },
-	{
-		"zbirenbaum/copilot-cmp",
-		dependencies = { "zbirenbaum/copilot.lua" },
-	},
 }

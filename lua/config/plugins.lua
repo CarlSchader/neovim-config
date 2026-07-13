@@ -78,18 +78,6 @@ vim.keymap.set("n", "<leader>?", function()
 	require("which-key").show({ global = false })
 end, { desc = "Buffer Local Keymaps (which-key)" })
 
--- copilot
-require("copilot").setup({
-	suggestion = {
-		enabled = true,
-		auto_trigger = true,
-	},
-	panel = { enabled = false },
-})
-
--- copilot-cmp
-require("copilot_cmp").setup()
-
 -- nvim-cmp
 local cmp = require("cmp")
 local has_words_before = function()
@@ -101,7 +89,6 @@ end
 cmp.setup({
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp", group_index = 2 },
-		{ name = "copilot", group_index = 2 },
 		{ name = "luasnip", group_index = 2 },
 		{ name = "buffer", group_index = 2 },
 		{ name = "nvim_lua", group_index = 2 },
