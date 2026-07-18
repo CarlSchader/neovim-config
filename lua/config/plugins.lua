@@ -122,6 +122,10 @@ cmp.setup({
 	},
 })
 
+-- lazydev-nvim
+-- must run before lua_ls is loaded
+require("lazydev").setup()
+
 -- lualine
 require("lualine").setup({
 	options = {
@@ -139,6 +143,3 @@ require("lualine").setup({
 
 -- lazygit
 vim.keymap.set("n", "<leader>lg", "<cmd>LazyGit<cr>", { desc = "LazyGit" })
-
--- lazydev-nvim
-require("lazydev")
