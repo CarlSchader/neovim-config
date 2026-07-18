@@ -41,6 +41,13 @@ vim.keymap.set("n", "<leader>v", "<cmd>vsplit<cr>", { desc = "Verical split" })
 
 vim.keymap.set("n", "<leader>tv", "<cmd>vsplit<cr><C-w>l<cmd>term<cr>i", { desc = "Open terminal with vertical split" })
 
+vim.keymap.set(
+	"n",
+	"<leader>hv",
+	"<cmd>hsplit<cr><C-w>j<cmd>term<cr>i",
+	{ desc = "Open terminal with horizontal split" }
+)
+
 vim.keymap.set("t", "<C-x>", [[<C-\><C-n>]], { noremap = true, desc = "Exit terminal mode" })
 vim.keymap.set("t", "<C-h>", [[<C-\><C-n><C-w>h]], { noremap = true, desc = "Exit terminal mode" })
 vim.keymap.set("t", "<C-j>", [[<C-\><C-n><C-w>j]], { noremap = true, desc = "Exit terminal mode" })
