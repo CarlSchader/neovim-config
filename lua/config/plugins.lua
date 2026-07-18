@@ -139,3 +139,6 @@ require("lualine").setup({
 
 -- lazygit
 vim.keymap.set("n", "<leader>lg", "<cmd>LazyGit<cr>", { desc = "LazyGit" })
+
+-- lazydev-nvim
+require("lazydev")
