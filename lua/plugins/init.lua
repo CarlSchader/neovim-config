@@ -72,6 +72,13 @@ return {
 	-- LSP
 	{ "neovim/nvim-lspconfig" },
 
+	-- lazydev
+	-- This gives LSP support for neovim lua itself
+	{
+		"folke/lazydev.nvim",
+		ft = "lua",
+	},
+
 	-- Completion
 	{
 		"hrsh7th/nvim-cmp",

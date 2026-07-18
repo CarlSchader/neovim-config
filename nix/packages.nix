@@ -55,6 +55,7 @@ flake-utils.lib.eachDefaultSystem (
 
       # lsp + completion
       nvim-lspconfig
+      lazydev-nvim
       conform-nvim
       nvim-cmp
       cmp-nvim-lsp

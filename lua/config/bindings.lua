@@ -44,7 +44,7 @@ vim.keymap.set("n", "<leader>tv", "<cmd>vsplit<cr><C-w>l<cmd>term<cr>i", { desc 
 vim.keymap.set(
 	"n",
 	"<leader>hv",
-	"<cmd>hsplit<cr><C-w>j<cmd>term<cr>i",
+	"<cmd>split<cr><C-w>j<cmd>term<cr>i",
 	{ desc = "Open terminal with horizontal split" }
 )
 
