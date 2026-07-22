@@ -19,6 +19,7 @@ with pkgs; [
   clang-tools
   bash-language-server
   markdown-oxide
+  terraform-ls
 
   # formatters
   stylua

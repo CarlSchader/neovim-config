@@ -15,6 +15,7 @@ local servers = {
 	"bashls",
 	"markdown_oxide",
 	"clangd",
+	"terraformls",
 	-- "sourcekit",
 }
 
@@ -74,6 +75,7 @@ require("conform").setup({
 		sh = { "shfmt" },
 		markdown = { "dprint" },
 		swift = { "swiftformat" },
+		terraform = { "terraform_fmt" },
 	},
 	format_on_save = {
 		-- These options will be passed to conform.format()
