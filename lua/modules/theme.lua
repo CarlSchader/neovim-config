@@ -2,7 +2,8 @@ local M = {}
 
 -- local DARK_COLOR_SCHEME = "moonfly"
 local DARK_COLOR_SCHEME = "kanagawa"
-local LIGHT_COLOR_SCHEME = "one-light"
+-- local LIGHT_COLOR_SCHEME = "one-light"
+local LIGHT_COLOR_SCHEME = "kanagawa-lotus"
 
 local function apply()
 	local scheme = (vim.o.background == "dark") and DARK_COLOR_SCHEME or LIGHT_COLOR_SCHEME
