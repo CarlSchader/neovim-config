@@ -50,7 +50,11 @@ require("gitlinker").setup({
 require("gitsigns").setup()
 
 -- indent-blankline
-require("ibl").setup()
+require("ibl").setup({
+	indent = {
+		char = "┊",
+	},
+})
 
 -- telescope + fzf
 require("telescope").setup({
