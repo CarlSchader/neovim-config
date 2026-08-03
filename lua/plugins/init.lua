@@ -6,6 +6,8 @@ return {
 
 	{ "rebelot/kanagawa.nvim" },
 
+	{ "ayu-theme/ayu-vim" },
+
 	-- UI
 	{ "nvim-mini/mini.nvim", version = "*" },
 	{

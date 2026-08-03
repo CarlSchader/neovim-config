@@ -35,3 +35,6 @@ vim.o.autoread = true
 
 -- disable swap file globally
 vim.opt.swapfile = false
+
+-- enable true colors support
+vim.opt.termguicolors = true

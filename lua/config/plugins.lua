@@ -2,7 +2,6 @@
 -- For mode-specific behavior, check vim.env.NIX_NEOVIM
 
 -- bufferline
-vim.opt.termguicolors = true
 require("bufferline").setup({
 	options = {
 		offsets = {

@@ -27,6 +27,7 @@ flake-utils.lib.eachDefaultSystem (
       # theme
       vim-moonfly-colors
       kanagawa-nvim
+      ayu-vim
 
       # ui
       mini-nvim
