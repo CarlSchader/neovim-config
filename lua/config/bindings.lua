@@ -39,7 +39,13 @@ vim.keymap.set("n", ";", ":", { desc = "Semi-colon also works for commands" })
 
 vim.keymap.set("n", "<leader>v", "<cmd>vsplit<cr>", { desc = "Verical split" })
 
-vim.keymap.set("n", "<leader>tv", "<cmd>vsplit<cr><C-w>l<cmd>term<cr>i", { desc = "Open terminal with vertical split" })
+vim.keymap.set("n", "<leader>tv", function()
+	require("modules.splits").spawn_term({ vertical = true })
+end, { desc = "Open terminal with vertical split" })
+
+vim.keymap.set("n", "<leader>hv", function()
+	require("modules.splits").spawn_term({ vertical = false })
+end, { desc = "Open terminal with vertical split" })
 
 vim.keymap.set(
 	"n",
