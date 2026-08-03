@@ -1,20 +1,20 @@
 local M = {}
 
--- local DARK_COLOR_SCHEME = "moonfly"
--- local LIGHT_COLOR_SCHEME = "one-light"
+local DARK_COLOR_SCHEME = "moonfly"
+local LIGHT_COLOR_SCHEME = "one-light"
 
 -- local DARK_COLOR_SCHEME = "kanagawa"
 -- local LIGHT_COLOR_SCHEME = "kanagawa-lotus"
 
-local DARK_COLOR_SCHEME = "ayu"
-local LIGHT_COLOR_SCHEME = "ayu"
+-- local DARK_COLOR_SCHEME = "ayu"
+-- local LIGHT_COLOR_SCHEME = "ayu"
 
 local function apply()
 	local scheme = (vim.o.background == "dark") and DARK_COLOR_SCHEME or LIGHT_COLOR_SCHEME
 
 	-- ayu only
 	-- This is how ayu changes between light and dark. I wish they just had seperate schemes.
-	vim.g.ayucolor = vim.o.background
+	-- vim.g.ayucolor = vim.o.background
 
 	pcall(vim.cmd.colorscheme, scheme)
 end
