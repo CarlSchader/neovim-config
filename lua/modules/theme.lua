@@ -1,6 +1,7 @@
 local M = {}
 
-local DARK_COLOR_SCHEME = "moonfly"
+-- local DARK_COLOR_SCHEME = "moonfly"
+local DARK_COLOR_SCHEME = "kanagawa"
 local LIGHT_COLOR_SCHEME = "one-light"
 
 local function apply()

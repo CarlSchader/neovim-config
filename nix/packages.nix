@@ -26,6 +26,7 @@ flake-utils.lib.eachDefaultSystem (
     plugins = with pkgs.vimPlugins; [
       # theme
       vim-moonfly-colors
+      kanagawa-nvim
 
       # ui
       mini-nvim

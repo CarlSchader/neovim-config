@@ -4,6 +4,8 @@ return {
 	-- Theme
 	{ "bluz71/vim-moonfly-colors" },
 
+	{ "rebelot/kanagawa.nvim" },
+
 	-- UI
 	{ "nvim-mini/mini.nvim", version = "*" },
 	{
