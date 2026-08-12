@@ -40,6 +40,7 @@ flake-utils.lib.eachDefaultSystem (
       neo-tree-nvim
       nui-nvim
       image-nvim
+      markdown-preview-nvim
 
       # git
       lazygit-nvim

@@ -113,3 +113,6 @@ vim.keymap.set("n", "<leader><S-Tab>", "<cmd>tabnext<cr>", { desc = "Go to next 
 -- conform
 -- -- see lang.lua to see the Format command
 vim.keymap.set("n", "<leader>fm", "<cmd>Format<cr>", { desc = "Run formatter" })
+
+-- markdown-preview-nvim
+vim.keymap.set("n", "<leader>m", "<cmd>MarkdownPreview<cr>", { desc = "Open markdown preview in browser" })
