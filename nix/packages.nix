@@ -42,6 +42,11 @@ flake-utils.lib.eachDefaultSystem (
       image-nvim
       markdown-preview-nvim
 
+      # db
+      vim-dadbod
+      vim-dadbod-ui
+      vim-dadbod-completion
+
       # git
       lazygit-nvim
       gitlinker-nvim
@@ -67,10 +72,6 @@ flake-utils.lib.eachDefaultSystem (
       cmp-nvim-lua
       luasnip
       cmp_luasnip
-
-      # copilot
-      copilot-lua
-      copilot-cmp
     ];
 
     neovimConfig = pkgs.neovimUtils.makeNeovimConfig {
