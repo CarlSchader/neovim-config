@@ -33,6 +33,10 @@ vim.keymap.set("n", "<leader>e", function()
 	require("neo-tree.sources.manager").refresh("filesystem")
 end, { desc = "Reload all buffers" })
 
+vim.keymap.set("n", "<leader>cd", function()
+	vim.fn.setreg("+", os.date("%Y-%m-%d"))
+end, { desc = "Puts current date string into unnamedplus register" })
+
 vim.keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode overload" })
 
 vim.keymap.set("n", ";", ":", { desc = "Semi-colon also works for commands" })
