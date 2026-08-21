@@ -60,6 +60,7 @@ flake-utils.lib.eachDefaultSystem (
 
       # treesitter
       treesitterWithParsers
+      nvim-treesitter-context
 
       # lsp + completion
       nvim-lspconfig

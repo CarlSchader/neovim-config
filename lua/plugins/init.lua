@@ -70,6 +70,10 @@ return {
 		build = ":TSUpdate",
 	},
 
+	{ -- (sticky headers)
+		"nvim-treesitter/nvim-treesitter-context",
+	},
+
 	-- Formatting
 	{ "stevearc/conform.nvim" },
 
