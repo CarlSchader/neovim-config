@@ -113,24 +113,15 @@ cmp.setup({
 		["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
-				cmp.select_next_item()
-			elseif vim.snippet.active({ direction = 1 }) then
-				vim.schedule(function()
-					vim.snippet.jump(1)
-				end)
-			elseif has_words_before() then
-				cmp.complete()
+				cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
 			else
 				fallback()
 			end
 		end, { "i", "s" }),
+
 		["<S-Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
-				cmp.select_prev_item()
-			elseif vim.snippet.active({ direction = -1 }) then
-				vim.schedule(function()
-					vim.snippet.jump(-1)
-				end)
+				cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
 			else
 				fallback()
 			end
