@@ -1,12 +1,14 @@
 local M = {}
 
 local DARK_COLOR_SCHEME = "moonfly"
-local LIGHT_COLOR_SCHEME = "one-light"
-
+-- local DARK_COLOR_SCHEME = "vscode"
 -- local DARK_COLOR_SCHEME = "kanagawa"
--- local LIGHT_COLOR_SCHEME = "kanagawa-lotus"
-
+-- local DARK_COLOR_SCHEME = "tokyodark"
 -- local DARK_COLOR_SCHEME = "ayu"
+
+local LIGHT_COLOR_SCHEME = "one-light"
+-- local LIGHT_COLOR_SCHEME = "vscode"
+-- local LIGHT_COLOR_SCHEME = "kanagawa-lotus"
 -- local LIGHT_COLOR_SCHEME = "ayu"
 
 local function apply()

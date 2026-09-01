@@ -8,6 +8,10 @@ return {
 
 	{ "ayu-theme/ayu-vim" },
 
+	{ "tiagovla/tokyodark.nvim" },
+
+	{ "Mofiqul/vscode.nvim" },
+
 	-- UI
 	{ "nvim-mini/mini.nvim", version = "*" },
 	{
