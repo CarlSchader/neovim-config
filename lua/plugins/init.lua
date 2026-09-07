@@ -14,12 +14,15 @@ return {
 
 	-- UI
 	{ "nvim-mini/mini.nvim", version = "*" },
+
 	{
 		"akinsho/bufferline.nvim",
 		version = "*",
 		dependencies = "nvim-tree/nvim-web-devicons",
 	},
+
 	{ "famiu/bufdelete.nvim" },
+
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = {
@@ -28,16 +31,31 @@ return {
 		},
 	},
 	{ "lukas-reineke/indent-blankline.nvim" },
+
 	{ "folke/which-key.nvim" },
+
+	-- {
+	-- 	"nvim-neo-tree/neo-tree.nvim",
+	-- 	branch = "v3.x",
+	-- 	dependencies = {
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"MunifTanjim/nui.nvim",
+	-- 		"nvim-tree/nvim-web-devicons",
+	-- 	},
+	-- },
+
 	{
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v3.x",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"MunifTanjim/nui.nvim",
-			"nvim-tree/nvim-web-devicons",
-		},
+		"stevearc/oil.nvim",
+		---@module 'oil'
+		---@type oil.SetupOpts
+		opts = {},
+		-- Optional dependencies
+		dependencies = { { "nvim-mini/mini.icons", opts = {} } },
+		-- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
+		-- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
+		lazy = false,
 	},
+
 	{
 		"3rd/image.nvim",
 		build = false, -- so that it doesn't build the rock https://github.com/3rd/image.nvim/issues/91#issuecomment-2453430239

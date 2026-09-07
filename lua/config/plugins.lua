@@ -15,16 +15,18 @@ require("bufferline").setup({
 	},
 })
 
--- neo-tree
-require("neo-tree").setup({
-	filesystem = {
-		follow_current_file = {
-			enabled = true,
-			leave_dirs_open = false,
-		},
-		use_libuv_file_watcher = true,
-	},
-})
+-- -- neo-tree
+-- require("neo-tree").setup({
+-- 	filesystem = {
+-- 		follow_current_file = {
+-- 			enabled = true,
+-- 			leave_dirs_open = false,
+-- 		},
+-- 		use_libuv_file_watcher = true,
+-- 	},
+-- })
+
+require("oil").setup()
 
 -- image
 require("image").setup()

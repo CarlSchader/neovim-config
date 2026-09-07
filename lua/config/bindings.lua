@@ -30,7 +30,7 @@ vim.keymap.set("n", "<leader>e", function()
 		end
 	end
 	vim.cmd("checktime")
-	require("neo-tree.sources.manager").refresh("filesystem")
+	-- require("neo-tree.sources.manager").refresh("filesystem")
 end, { desc = "Reload all buffers" })
 
 vim.keymap.set("n", "<leader>cd", function()
@@ -96,14 +96,17 @@ end, { desc = "Telescope live grep" })
 vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
 
--- neotree
-vim.keymap.set("", "<leader>n", function()
-	if vim.bo.filetype == "neo-tree" then
-		vim.cmd("wincmd p")
-	else
-		vim.cmd("Neotree focus")
-	end
-end, { desc = "Open file tree explorer" })
+-- -- neotree
+-- vim.keymap.set("", "<leader>n", function()
+-- 	if vim.bo.filetype == "neo-tree" then
+-- 		vim.cmd("wincmd p")
+-- 	else
+-- 		vim.cmd("Neotree focus")
+-- 	end
+-- end, { desc = "Open file tree explorer" })
+
+-- oil
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory with oil" })
 
 -- bufferline
 vim.keymap.set("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "Go to next buffer" })
