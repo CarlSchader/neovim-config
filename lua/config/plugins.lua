@@ -26,7 +26,11 @@ require("bufferline").setup({
 -- 	},
 -- })
 
-require("oil").setup()
+require("oil").setup({
+	view_options = {
+		show_hidden = true,
+	},
+})
 
 -- image
 require("image").setup()
