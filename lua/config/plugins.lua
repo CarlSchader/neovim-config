@@ -72,7 +72,7 @@ require("telescope").setup({
 	pickers = {
 		find_files = {
 			hidden = false,
-			no_ignore = true,
+			no_ignore = false,
 		},
 	},
 })
