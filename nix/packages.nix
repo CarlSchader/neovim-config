@@ -39,11 +39,14 @@ flake-utils.lib.eachDefaultSystem (
       lualine-nvim
       indent-blankline-nvim
       which-key-nvim
-      # neo-tree-nvim
-      oil-nvim
       nui-nvim
       image-nvim
       markdown-preview-nvim
+
+      # file tree
+      # neo-tree-nvim
+      oil-nvim
+      oil-git-status-nvim
 
       # db
       vim-dadbod

@@ -26,11 +26,16 @@ require("bufferline").setup({
 -- 	},
 -- })
 
+-- oil
 require("oil").setup({
+	win_options = {
+		signcolumn = "yes:2", -- Needed for refractalize/oil-git-status.nvim
+	},
 	view_options = {
 		show_hidden = true,
 	},
 })
+require("oil-git-status").setup()
 
 -- image
 require("image").setup()

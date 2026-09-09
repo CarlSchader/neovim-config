@@ -34,6 +34,8 @@ return {
 
 	{ "folke/which-key.nvim" },
 
+	-- File Tree
+
 	-- {
 	-- 	"nvim-neo-tree/neo-tree.nvim",
 	-- 	branch = "v3.x",
@@ -54,6 +56,15 @@ return {
 		-- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
 		-- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
 		lazy = false,
+	},
+
+	{
+		"refractalize/oil-git-status.nvim",
+		dependencies = {
+			"stevearc/oil.nvim",
+		},
+
+		config = true,
 	},
 
 	{
