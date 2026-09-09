@@ -80,34 +80,26 @@ flake-utils.lib.eachDefaultSystem (
       luasnip
       cmp_luasnip
     ];
-
-    neovimConfig = pkgs.neovimUtils.makeNeovimConfig {
+  in {
+    packages.default = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped {
       plugins = map (plugin: {inherit plugin;}) plugins;
       extraLuaPackages = ps: [ps.jsregexp];
       withPython3 = false;
       withNodeJs = false;
       withRuby = false;
+      wrapRc = false;
+      wrapperArgs = [
+        "--set"
+        "NIX_NEOVIM"
+        "1"
+        "--set"
+        "VIMINIT"
+        "set rtp^=${configSrc} | source ${configSrc}/init.lua"
+        "--suffix"
+        "PATH"
+        ":"
+        "${pkgs.lib.makeBinPath extraPackages}"
+      ];
     };
-  in {
-    packages.default = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped (
-      neovimConfig
-      // {
-        wrapRc = false;
-        wrapperArgs =
-          neovimConfig.wrapperArgs
-          ++ [
-            "--set"
-            "NIX_NEOVIM"
-            "1"
-            "--set"
-            "VIMINIT"
-            "set rtp^=${configSrc} | source ${configSrc}/init.lua"
-            "--suffix"
-            "PATH"
-            ":"
-            "${pkgs.lib.makeBinPath extraPackages}"
-          ];
-      }
-    );
   }
 )
