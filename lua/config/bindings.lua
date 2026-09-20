@@ -37,6 +37,10 @@ vim.keymap.set("n", "<leader>cd", function()
 	vim.fn.setreg("+", os.date("%Y-%m-%d"))
 end, { desc = "Puts current date string into unnamedplus register" })
 
+vim.keymap.set("n", "<leader>cD", function()
+	vim.fn.setreg("+", os.date("!%Y-%m-%dT%H:%M:%SZ"))
+end, { desc = "Puts current date and time string into unnamedplus register" })
+
 vim.keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode overload" })
 
 vim.keymap.set("n", ";", ":", { desc = "Semi-colon also works for commands" })

@@ -28,6 +28,6 @@ with pkgs; [
   ruff
   clang-tools
   shfmt
-  dprint
+  markdownlint-cli2
   swiftformat
 ]

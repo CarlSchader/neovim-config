@@ -73,7 +73,7 @@ require("conform").setup({
 		cpp = { "clang-format" },
 		bash = { "shfmt" },
 		sh = { "shfmt" },
-		markdown = { "dprint" },
+		markdown = { "markdownlint-cli2" },
 		swift = { "swiftformat" },
 		terraform = { "terraform_fmt" },
 	},
