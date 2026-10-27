@@ -36,6 +36,24 @@ for _, server in ipairs(servers) do
 end
 
 -- special lsp configs
+
+-- nix's clangd wrapper prepends nix's libc/libstdc++ headers unless --query-driver is passed.
+-- On hosts with a system toolchain (Ubuntu, Jetson), query the project's compiler instead.
+if vim.uv.fs_stat("/usr/include/c++") then
+	local drivers = {
+		"/usr/bin/c++",
+		"/usr/bin/cc",
+		"/usr/bin/g++*",
+		"/usr/bin/gcc*",
+		"/usr/bin/clang*",
+		"/usr/bin/*-g++*",
+		"/usr/bin/*-gcc*",
+	}
+	vim.lsp.config("clangd", {
+		cmd = { "clangd", "--query-driver=" .. table.concat(drivers, ",") },
+	})
+end
+
 vim.lsp.config("pyright", { -- pyright used only for rename; ty handles everything else
 	capabilities = capabilities,
 	settings = {
